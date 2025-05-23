@@ -16,6 +16,6 @@ public abstract class Topping {
         this.toppingType = toppingType;
     }
 
-   public abstract double getPrice();
+   public abstract double getPrice(int size);
 
 }

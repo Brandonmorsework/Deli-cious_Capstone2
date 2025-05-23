@@ -59,17 +59,45 @@ public class UserInterface {
 
                 switch (choice) {
                     case 1:
-                        displayOrderScreen();
+                        addSandwich();
+                        break;
+                    case 2:
+                        addDrink();
+                        break;
+                    case 3:
+                        addChips();
+                        break;
+                    case 4:
+                        checkOut();
                         break;
                     case 0:
                         quit = true;
 
                 }
-
             }
         }
 
-        public void goHome() {
+    public void addSandwich() {
+
+
+    }
+
+    public void addDrink() {
+
+
+    }
+
+    public void addChips() {
+
+
+    }
+
+    public void checkOut() {
+
+
+    }
+
+    public void goHome() {
 
 
         }

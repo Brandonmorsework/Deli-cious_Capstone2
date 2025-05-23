@@ -73,63 +73,44 @@ public class Sandwich {
     public double getPrice() {
 
         double finalPrice = 0;
-        double addedExtraMeatTopping;
-        double addedExtraCheeseTopping;
-        double addedMeat;
-        double addedCheese;
-        double breadLengthCost;
+        double addedExtraMeatTopping = 0;
+        double addedExtraCheeseTopping = 0;
+        double breadLengthCost = 0;
 
-        if (size == 4) {
+        if (getSize() == 4) {
 
             breadLengthCost = 5.50;
-            addedMeat = 1.00;
             addedExtraMeatTopping = 0.50;
-            addedCheese = 0.75;
             addedExtraCheeseTopping = 0.30;
 
 
         }
-        else if (size == 8) {
+        else if (getSize() == 8) {
 
             breadLengthCost = 7.00;
-            addedMeat = 2.00;
             addedExtraMeatTopping = 1.00;
-            addedCheese = 1.50;
             addedExtraCheeseTopping = 0.60;
+
 
         }
 
-        else if (size == 12) {
+        else if (getSize() == 12) {
 
             breadLengthCost = 8.50;
-            addedMeat = 3.00;
             addedExtraMeatTopping = 1.50;
-            addedCheese = 2.25;
             addedExtraCheeseTopping = 0.90;
 
         }
 
-        if(isExtraCheese) {
+        finalPrice = breadLengthCost;
 
-            finalPrice = finalPrice + getSize();
-
-    } else {
-
-            finalPrice = finalPrice + 0;
-
-        }
-
+    if (isExtraCheese) {
+             finalPrice += addedExtraCheeseTopping;
+    }
     if (isExtraMeat) {
-
-        finalPrice = finalPrice + getSize();
-
-    } else {
-
-        finalPrice = finalPrice + 0;
-
+            finalPrice += addedExtraMeatTopping;
     }
 
         return finalPrice;
     }
-
 }

@@ -79,6 +79,9 @@ public class UserInterface {
 
     public void addSandwich() {
 
+            Order order = new Order();
+
+            order.addSandwich();
 
     }
 

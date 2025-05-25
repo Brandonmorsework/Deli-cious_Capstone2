@@ -37,7 +37,7 @@ public class Order {
         double totalPrice = 0.0;
 
         for (Sandwich sandwich : sandwiches) {
-            sandwiches.add(sandwich);
+            totalPrice += sandwich.getPrice();
         }
 
         if (chips != null) {

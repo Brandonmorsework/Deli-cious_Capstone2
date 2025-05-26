@@ -21,7 +21,7 @@ public class Order {
         return drink;
     }
 
-    public void setDrink(Drink drink) {
+    public void addDrink(Drink drink) {
         this.drink = drink;
     }
 

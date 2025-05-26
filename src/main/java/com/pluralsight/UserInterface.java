@@ -417,11 +417,11 @@ public class UserInterface {
     public void addDrink() {
 
         String userDrinkSizeChoice = "";
+        String userDrinkSize = "";
 
-        while (!userDrinkSizeChoice.equalsIgnoreCase("next")) {
+
 
             System.out.println("Please Enter the Number of the Size of Drink You Would Like to Add. ");
-            System.out.println("Type 'next' to Move on");
             System.out.println("===== Drinks Sizes ====");
             System.out.println("1 - Small");
             System.out.println("2 - Medium");
@@ -429,38 +429,38 @@ public class UserInterface {
 
             try {
 
-            userDrinkSizeChoice = scanner.nextLine();
+                userDrinkSizeChoice = scanner.nextLine();
 
-            switch (userDrinkSizeChoice) {
+                switch (userDrinkSizeChoice) {
 
-                case "1":
-                    userDrinkSizeChoice = "small";
-                    break;
-                case "2":
-                    userDrinkSizeChoice = "medium";
-                    break;
-                case "3":
-                    userDrinkSizeChoice = "large";
-                case "next":
-                    break;
-                default:
-                    System.out.println("Invalid! Please Enter Either 1, 2, or 3!");
+                    case "1":
+                        userDrinkSize = "Small";
+                        break;
+                    case "2":
+                        userDrinkSize = "Medium";
+                        break;
+                    case "3":
+                        userDrinkSize = "Large";
+                        break;
+                    case "next":
+                        break;
+                    default:
+                        System.out.println("Invalid! Please Enter Either 1, 2, or 3!");
 
 
-            }
+                }
 
             } catch (Exception e) {
                 System.out.println("Invalid Number! Please Enter Either 1, 2, or 3!");
 
             }
-        }
 
-        String userFlavorChoice = "";
 
-        while (!userFlavorChoice.equalsIgnoreCase("next")) {
+            String userFlavorChoice = "";
+            String userFlavor = "";
+
 
             System.out.println("Please Enter the Number of the Flavor of Drink You Would Like to Add. ");
-            System.out.println("Type 'next' to Move on");
             System.out.println("===== Drinks Flavors ====");
             System.out.println(" ");
             System.out.println("1 - Water");
@@ -469,39 +469,47 @@ public class UserInterface {
             System.out.println("4 - Tea");
             System.out.println("5 - Dr. Pepper ");
 
-        try {
+            try {
 
-            userFlavorChoice = scanner.nextLine();
+                userFlavorChoice = scanner.nextLine();
 
-            switch (userFlavorChoice) {
+                switch (userFlavorChoice) {
 
-                case "1":
-                    userFlavorChoice = "Water";
-                    break;
-                case "2":
-                    userFlavorChoice = "Coca-Cola";
-                    break;
-                case "3":
-                    userFlavorChoice = "Sprite";
-                    break;
-                case "4":
-                    userFlavorChoice = "Tea";
-                    break;
-                case "5":
-                    userFlavorChoice = "Dr. Pepper";
-                    break;
-                case "next":
-                    break;
-                default:
-                    System.out.println("Invalid! Please Enter a Number Between 1-5!");
+                    case "1":
+                        userFlavor = "Water";
+                        break;
+                    case "2":
+                        userFlavor = "Coca-Cola";
+                        break;
+                    case "3":
+                        userFlavor = "Sprite";
+                        break;
+                    case "4":
+                        userFlavor = "Tea";
+                        break;
+                    case "5":
+                        userFlavor = "Dr. Pepper";
+                        break;
+                    case "next":
+                        break;
+                    default:
+                        System.out.println("Invalid! Please Enter a Number Between 1-5!");
+                }
+
+            } catch (Exception e) {
+
+                System.out.println("Invalid Number! Please Enter a Number Between 1-5!");
             }
 
-        } catch (Exception e) {
 
-            System.out.println("Invalid Number! Please Enter a Number Between 1-5!");
-        }
-    }
-        Drink drink = new Drink(userDrinkSizeChoice, userFlavorChoice);
+            if (!userDrinkSize.isEmpty() && !userFlavor.isEmpty()) {
+                Drink drink = new Drink(userDrinkSize, userFlavor);
+                order.addDrink(drink);
+                System.out.println(userDrinkSize + userFlavor + "Successfully Added!");
+            } else {
+                System.out.println("No Drinks Added...");
+                System.out.println("Going Back Home...");
+            }
 
     }
 

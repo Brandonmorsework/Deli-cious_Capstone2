@@ -30,15 +30,15 @@ public class Drink {
 
         double finalDrinkPrice = 0.0;
 
-        if (size.equalsIgnoreCase("small")) {
+        if (size.equalsIgnoreCase("Small")) {
 
             finalDrinkPrice = 2.00;
 
-        } else if (size.equalsIgnoreCase("medium")) {
+        } else if (size.equalsIgnoreCase("Medium")) {
 
             finalDrinkPrice = 2.50;
 
-        } else if (size.equalsIgnoreCase("large")) {
+        } else if (size.equalsIgnoreCase("Large")) {
 
             finalDrinkPrice = 3.00;
 

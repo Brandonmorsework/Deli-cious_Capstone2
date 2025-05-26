@@ -87,7 +87,7 @@ public class UserInterface {
 
 
         int userSandwichSize = 0;
-        int sandwichSizeOption = 0;
+
 
         boolean availableBreadSize = false;
         System.out.println("Adding Sandwich to Order:");
@@ -181,9 +181,9 @@ public class UserInterface {
 
         System.out.println("Please Add Your Meat Topping by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Meat");
 
-        String userInput = scanner.nextLine();
+            String userMeatChoice = "";
 
-        while (!userInput.equalsIgnoreCase("next")) {
+        while (!userMeatChoice.equalsIgnoreCase("next")) {
 
             System.out.println("Meat Toppings:");
             System.out.println("1 - Steak");
@@ -193,34 +193,46 @@ public class UserInterface {
             System.out.println("5 - Chicken");
             System.out.println("6 - Bacon");
 
-            String userMeatChoice = scanner.nextLine();
+            try {
 
-            switch (userMeatChoice) {
+                userMeatChoice = scanner.nextLine();
 
-                case "1":
-                    toppingList.add(new Meat("Steak"));
-                    break;
-                case "2":
-                   toppingList.add(new Meat("Ham"));
-                    break;
-                case "3":
-                    toppingList.add(new Meat("Salami"));
-                    break;
-                case "4":
-                    toppingList.add(new Meat("Roast Beef"));
-                    break;
-                case "5":
-                    toppingList.add(new Meat("Chicken"));
-                    break;
-                case "6":
-                    toppingList.add(new Meat("Bacon"));
-                    break;
-                case "next":
+                switch (userMeatChoice) {
+
+                    case "1":
+
+                        toppingList.add(new Meat("Steak"));
+                        break;
+                    case "2":
+                        toppingList.add(new Meat("Ham"));
+                        break;
+                    case "3":
+                        toppingList.add(new Meat("Salami"));
+                        break;
+                    case "4":
+                        toppingList.add(new Meat("Roast Beef"));
+                        break;
+                    case "5":
+                        toppingList.add(new Meat("Chicken"));
+                        break;
+                    case "6":
+                        toppingList.add(new Meat("Bacon"));
+                        break;
+                    case "next":
+                        break;
+
+                }
+
+            } catch (Exception e) {
+
+            System.out.println("Please Enter a Number for the Meat Topping!");
 
             }
         }
 
-        while (!userInput.equalsIgnoreCase("next")) {
+        String userCheeseChoice = "";
+
+        while (!userCheeseChoice.equalsIgnoreCase("next")) {
 
             System.out.println("Please Add Your Cheese Topping by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Cheese");
             System.out.println("Cheese Toppings:");
@@ -229,22 +241,31 @@ public class UserInterface {
             System.out.println("3 - Cheddar");
             System.out.println("4 - Swiss");
 
-            int userCheeseChoice = scanner.nextInt();
+            try {
 
-            switch (userCheeseChoice) {
+                userCheeseChoice = scanner.nextLine();
 
-                case 1:
-                    toppingList.add(new Cheese("American"));
-                    break;
-                case 2:
-                    toppingList.add(new Cheese("Provolone"));
-                    break;
-                case 3:
-                    toppingList.add(new Cheese("Cheddar"));
-                    break;
-                case 4:
-                    toppingList.add(new Cheese("Swiss"));
-                    break;
+                switch (userCheeseChoice) {
+
+                    case "1":
+                        toppingList.add(new Cheese("American"));
+                        break;
+                    case "2":
+                        toppingList.add(new Cheese("Provolone"));
+                        break;
+                    case "3":
+                        toppingList.add(new Cheese("Cheddar"));
+                        break;
+                    case "4":
+                        toppingList.add(new Cheese("Swiss"));
+                        break;
+                    case "next":
+                        break;
+
+                }
+
+            } catch (Exception e) {
+                System.out.println("Please Enter a Valid Number for the Cheese Option!");
 
             }
         }
@@ -269,57 +290,65 @@ public class UserInterface {
             isExtraMeat = false;
         }
 
-        System.out.println("Please Add Your Included Toppings by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Them");
-        System.out.println("Included Toppings:");
-        System.out.println("1 - Lettuce");
-        System.out.println("2 - Peppers");
-        System.out.println("3 - Onions");
-        System.out.println("4 - Tomatoes");
-        System.out.println("5 - Jalapenos");
-        System.out.println("6 - Cucumbers");
-        System.out.println("7 - Pickles");
-        System.out.println("8 - Guacamole");
-        System.out.println("9 - Mushrooms");
-
-        int userToppingChoice = scanner.nextInt();
-
-        while (!userInput.equalsIgnoreCase("next")) {
 
 
-            switch (userToppingChoice) {
+        String userToppingChoice = "";
 
-                case 1:
-                    toppingList.add(new RegularToppings("Lettuce"));
-                    break;
-                case 2:
-                    toppingList.add(new RegularToppings("Peppers"));
-                    break;
-                case 3:
-                    toppingList.add(new RegularToppings("Onions"));
-                    break;
-                case 4:
-                    toppingList.add(new RegularToppings("Tomatoes"));
-                    break;
-                case 5:
-                    toppingList.add(new RegularToppings("Jalapenos"));
-                    break;
-                case 6:
-                    toppingList.add(new RegularToppings("Cucumbers"));
-                    break;
-                case 7:
-                    toppingList.add(new RegularToppings("Pickles"));
-                    break;
-                case 8:
-                    toppingList.add(new RegularToppings("Guacamole"));
-                    break;
-                case 9:
-                    toppingList.add(new RegularToppings("Mushrooms"));
-                    break;
+        while (!userToppingChoice.equalsIgnoreCase("next")) {
 
+            System.out.println("Please Add Your Included Toppings by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Them");
+            System.out.println("Included Toppings:");
+            System.out.println("1 - Lettuce");
+            System.out.println("2 - Peppers");
+            System.out.println("3 - Onions");
+            System.out.println("4 - Tomatoes");
+            System.out.println("5 - Jalapenos");
+            System.out.println("6 - Cucumbers");
+            System.out.println("7 - Pickles");
+            System.out.println("8 - Guacamole");
+            System.out.println("9 - Mushrooms");
+
+            try {
+
+                userToppingChoice = scanner.nextLine();
+
+                switch (userToppingChoice) {
+
+                    case "1":
+                        toppingList.add(new RegularToppings("Lettuce"));
+                        break;
+                    case "2":
+                        toppingList.add(new RegularToppings("Peppers"));
+                        break;
+                    case "3":
+                        toppingList.add(new RegularToppings("Onions"));
+                        break;
+                    case "4":
+                        toppingList.add(new RegularToppings("Tomatoes"));
+                        break;
+                    case "5":
+                        toppingList.add(new RegularToppings("Jalapenos"));
+                        break;
+                    case "6":
+                        toppingList.add(new RegularToppings("Cucumbers"));
+                        break;
+                    case "7":
+                        toppingList.add(new RegularToppings("Pickles"));
+                        break;
+                    case "8":
+                        toppingList.add(new RegularToppings("Guacamole"));
+                        break;
+                    case "9":
+                        toppingList.add(new RegularToppings("Mushrooms"));
+                        break;
+                    case "next":
+                        break;
+                }
+
+
+            } catch (Exception e) {
+                System.out.println("Please Enter a Valid Number for the Included Toppings Option!");
             }
-
-                userInput = "next";
-
         }
 
         Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat );

@@ -114,7 +114,7 @@ public class UserInterface {
 
         while (!userInput.equalsIgnoreCase("next")) {
 
-            System.out.println("Please Add Your Toppings. Type 'next' When You Are Finished Adding Toppings");
+            System.out.println("Please Add Your Meat Topping by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Meat");
             System.out.println("Meat Toppings:");
             System.out.println("1 - Steak");
             System.out.println("2 - Ham");
@@ -150,6 +150,9 @@ public class UserInterface {
             userInput = "next";
         }
 
+        while (!userInput.equalsIgnoreCase("next")) {
+
+            System.out.println("Please Add Your Cheese Topping by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Cheese");
             System.out.println("Cheese Toppings:");
             System.out.println("1 - American");
             System.out.println("2 - Provolone");
@@ -176,13 +179,65 @@ public class UserInterface {
             }
 
             userInput = "next";
+        }
+
 
 
         System.out.println("Do you Want Extra Cheese? ( Y / N )");
         System.out.println(" ");
         System.out.println("Do you Want Extra Meat? ( Y / N )");
 
+        System.out.println("Please Add Your Included Toppings by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Them");
+        System.out.println("Included Toppings:");
+        System.out.println("1 - Lettuce");
+        System.out.println("2 - Peppers");
+        System.out.println("3 - Onions");
+        System.out.println("4 - Tomatoes");
+        System.out.println("5 - Jalapenos");
+        System.out.println("6 - Cucumbers");
+        System.out.println("7 - Pickles");
+        System.out.println("8 - Guacamole");
+        System.out.println("9 - Mushrooms");
 
+        int userToppingChoice = scanner.nextInt();
+
+        while (!userInput.equalsIgnoreCase("next")) {
+
+
+            switch (userToppingChoice) {
+
+                case 1:
+                    new RegularToppings("Lettuce");
+                    break;
+                case 2:
+                    new RegularToppings("Peppers");
+                    break;
+                case 3:
+                    new RegularToppings("Onions");
+                    break;
+                case 4:
+                    new RegularToppings("Tomatoes");
+                    break;
+                case 5:
+                    new RegularToppings("Jalapenos");
+                    break;
+                case 6:
+                    new RegularToppings("Cucumbers");
+                    break;
+                case 7:
+                    new RegularToppings("Pickles");
+                    break;
+                case 8:
+                    new RegularToppings("Guacamole");
+                    break;
+                case 9:
+                    new RegularToppings("Mushrooms");
+                    break;
+
+            }
+                userInput = "next";
+
+        }
 
         order.addSandwich(sandwich);
 

@@ -86,20 +86,45 @@ public class UserInterface {
         ArrayList<Topping> toppingList = new ArrayList<>();
 
 
-        int userSandwichSize;
+        int userSandwichSize = 0;
+        int sandwichSizeOption = 0;
 
+        boolean availableBreadSize = false;
         System.out.println("Adding Sandwich to Order:");
         System.out.println(" ");
-        System.out.println("Please Select a Sandwich Size:");
-        System.out.println(" 4 - 4 Inch Sandwich");
-        System.out.println(" 8 - 8 Inch Sandwich");
-        System.out.println("12 - 12 Inch Sandwich");
-        System.out.println(" ");
-        userSandwichSize = scanner.nextInt();
-        scanner.nextLine();
+
+        while (!availableBreadSize) {
+
+
+            System.out.println("Please Select a Sandwich Size:");
+            System.out.println(" 4 - 4 Inch Sandwich");
+            System.out.println(" 8 - 8 Inch Sandwich");
+            System.out.println("12 - 12 Inch Sandwich");
+            System.out.println(" ");
+
+            try {
+                userSandwichSize = scanner.nextInt();
+                scanner.nextLine();
+
+               if (userSandwichSize == 4 || userSandwichSize == 8 || userSandwichSize == 12) {
+                   availableBreadSize = true;
+               } else {
+                   System.out.println(" ");
+                   System.out.println("Please Enter Either '4', '8' or '12' for the Bread Size");
+                   System.out.println(" ");
+                   availableBreadSize = false;
+               }
+
+            } catch (Exception e) {
+                System.out.println(" ");
+                System.out.println("Invalid Response, Please Enter a Number!");
+                System.out.println(" ");
+                scanner.nextLine();
+            }
+        }
 
         int userBreadTypeOption;
-        String userBreadType;
+        String userBreadType = "";
 
         boolean availableBread = false;
 

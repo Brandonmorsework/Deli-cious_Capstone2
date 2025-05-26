@@ -113,4 +113,16 @@ public class Sandwich {
 
         return finalPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "size=" + size +
+                ", isExtraCheese=" + isExtraCheese +
+                ", isExtraMeat=" + isExtraMeat +
+                ", isToasted=" + isToasted +
+                ", breadType='" + breadType + '\'' +
+                ", toppings=" + toppings +
+                '}';
+    }
 }

@@ -5,81 +5,82 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-        private Sandwich sandwich;
-        private Scanner scanner;
-        private Order order;
-        public UserInterface() {
+    private Sandwich sandwich;
+    private Scanner scanner;
+    private Order order;
 
-            scanner = new Scanner(System.in);
-        }
+    public UserInterface() {
 
-        public void displayHomeScreen() {
+        scanner = new Scanner(System.in);
+    }
 
-            boolean quit = false;
-            while (!quit) {
+    public void displayHomeScreen() {
 
-                System.out.println("=========== Welcome to Deli-cious! ============");
-                System.out.println(" ");
-                System.out.println("1 - New Order");
-                System.out.println("0 - Exit the Deli");
+        boolean quit = false;
+        while (!quit) {
 
-                System.out.println("Enter your Choice:");
-                System.out.println(" ");
-                int choice = scanner.nextInt();
-                scanner.nextLine();
+            System.out.println("=========== Welcome to Deli-cious! ============");
+            System.out.println(" ");
+            System.out.println("1 - New Order");
+            System.out.println("0 - Exit the Deli");
 
-                switch (choice) {
-                    case 1:
-                        displayOrderScreen();
-                        break;
-                    case 0:
-                        quit = true;
+            System.out.println("Enter your Choice:");
+            System.out.println(" ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-                }
+            switch (choice) {
+                case 1:
+                    displayOrderScreen();
+                    break;
+                case 0:
+                    quit = true;
 
             }
 
         }
 
-        public void displayOrderScreen() {
+    }
 
-            order = new Order();
+    public void displayOrderScreen() {
 
-            boolean quit = false;
-            while (!quit) {
+        order = new Order();
 
-                System.out.println("==== New Order ====");
-                System.out.println(" ");
-                System.out.println("1 - Add Sandwich");
-                System.out.println("2 - Add Drink");
-                System.out.println("3 - Add Chips");
-                System.out.println("4 - Checkout");
-                System.out.println("0 - Cancel Order");
-                System.out.println(" ");
-                System.out.println("Enter your Choice:");
-                System.out.println(" ");
-                int choice = scanner.nextInt();
-                scanner.nextLine();
+        boolean quit = false;
+        while (!quit) {
 
-                switch (choice) {
-                    case 1:
-                        addSandwich();
-                        break;
-                    case 2:
-                        addDrink();
-                        break;
-                    case 3:
-                        addChips();
-                        break;
-                    case 4:
-                        checkOut();
-                        break;
-                    case 0:
-                        quit = true;
+            System.out.println("==== New Order ====");
+            System.out.println(" ");
+            System.out.println("1 - Add Sandwich");
+            System.out.println("2 - Add Drink");
+            System.out.println("3 - Add Chips");
+            System.out.println("4 - Checkout");
+            System.out.println("0 - Cancel Order");
+            System.out.println(" ");
+            System.out.println("Enter your Choice:");
+            System.out.println(" ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-                }
+            switch (choice) {
+                case 1:
+                    addSandwich();
+                    break;
+                case 2:
+                    addDrink();
+                    break;
+                case 3:
+                    addChips();
+                    break;
+                case 4:
+                    checkOut();
+                    break;
+                case 0:
+                    quit = true;
+
             }
         }
+    }
 
     public void addSandwich() {
 
@@ -106,14 +107,14 @@ public class UserInterface {
                 userSandwichSize = scanner.nextInt();
                 scanner.nextLine();
 
-               if (userSandwichSize == 4 || userSandwichSize == 8 || userSandwichSize == 12) {
-                   availableBreadSize = true;
-               } else {
-                   System.out.println(" ");
-                   System.out.println("Please Enter Either '4', '8' or '12' for the Bread Size");
-                   System.out.println(" ");
-                   availableBreadSize = false;
-               }
+                if (userSandwichSize == 4 || userSandwichSize == 8 || userSandwichSize == 12) {
+                    availableBreadSize = true;
+                } else {
+                    System.out.println(" ");
+                    System.out.println("Please Enter Either '4', '8' or '12' for the Bread Size");
+                    System.out.println(" ");
+                    availableBreadSize = false;
+                }
 
             } catch (Exception e) {
                 System.out.println(" ");
@@ -183,7 +184,9 @@ public class UserInterface {
 
         System.out.println("Please Add Your Meat Topping by Entering the Appropriate Number.");
 
-            String userMeatChoice = "";
+        String userMeatChoice = "";
+        boolean hasMeat = false;
+        boolean isExtraMeat = false;
 
         while (!userMeatChoice.equalsIgnoreCase("next")) {
 
@@ -205,31 +208,37 @@ public class UserInterface {
 
                         toppingList.add(new Meat("Steak"));
                         System.out.println("Added Steak!");
+                        hasMeat = true;
                         System.out.println(" ");
                         break;
                     case "2":
                         toppingList.add(new Meat("Ham"));
                         System.out.println("Added Ham!");
+                        hasMeat = true;
                         System.out.println(" ");
                         break;
                     case "3":
                         toppingList.add(new Meat("Salami"));
                         System.out.println("Added Salami!");
+                        hasMeat = true;
                         System.out.println(" ");
                         break;
                     case "4":
                         toppingList.add(new Meat("Roast Beef"));
                         System.out.println("Added Roast Beef!");
+                        hasMeat = true;
                         System.out.println(" ");
                         break;
                     case "5":
                         toppingList.add(new Meat("Chicken"));
                         System.out.println("Added Chicken!");
+                        hasMeat = true;
                         System.out.println(" ");
                         break;
                     case "6":
                         toppingList.add(new Meat("Bacon"));
                         System.out.println("Added Bacon!");
+                        hasMeat = true;
                         System.out.println(" ");
                         break;
                     case "next":
@@ -239,12 +248,14 @@ public class UserInterface {
 
             } catch (Exception e) {
 
-            System.out.println("Please Enter a Number for the Meat Topping!");
+                System.out.println("Please Enter a Number for the Meat Topping!");
 
             }
         }
 
         String userCheeseChoice = "";
+        boolean hasCheese = false;
+        boolean isExtraCheese = false;
 
         while (!userCheeseChoice.equalsIgnoreCase("next")) {
 
@@ -259,26 +270,31 @@ public class UserInterface {
 
                 userCheeseChoice = scanner.nextLine();
 
+
                 switch (userCheeseChoice) {
 
                     case "1":
                         toppingList.add(new Cheese("American"));
                         System.out.println("Added American Cheese!");
+                        hasCheese = true;
                         System.out.println(" ");
                         break;
                     case "2":
                         toppingList.add(new Cheese("Provolone"));
                         System.out.println("Added Provolone Cheese!");
+                        hasCheese = true;
                         System.out.println(" ");
                         break;
                     case "3":
                         toppingList.add(new Cheese("Cheddar"));
                         System.out.println("Added Cheddar Cheese!");
+                        hasCheese = true;
                         System.out.println(" ");
                         break;
                     case "4":
                         toppingList.add(new Cheese("Swiss"));
                         System.out.println("Added Swiss Cheese!");
+                        hasCheese = true;
                         System.out.println(" ");
                         break;
                     case "next":
@@ -291,28 +307,28 @@ public class UserInterface {
 
             }
         }
+        if (hasCheese) {
+            System.out.println("Do you Want Extra Cheese? ( Y / N )");
+            String extraCheeseOption = scanner.nextLine();
 
-        System.out.println("Do you Want Extra Cheese? ( Y / N )");
-        String extraCheeseOption = scanner.nextLine();
-        boolean isExtraCheese;
-        if (extraCheeseOption.equalsIgnoreCase("y") || extraCheeseOption.equalsIgnoreCase("yes")) {
-            isExtraCheese = true;
+            isExtraCheese = (extraCheeseOption.equalsIgnoreCase("y") || extraCheeseOption.equalsIgnoreCase("yes"));
+            System.out.println("Added Extra Cheese!");
+
         } else {
             isExtraCheese = false;
         }
 
+        if(hasMeat) {
         System.out.println(" ");
         System.out.println("Do you Want Extra Meat? ( Y / N )");
-
         String extraMeatOption = scanner.nextLine();
-        boolean isExtraMeat;
-        if (extraMeatOption.equalsIgnoreCase("y") || extraMeatOption.equalsIgnoreCase("yes")) {
-            isExtraMeat = true;
+
+        isExtraMeat = (extraMeatOption.equalsIgnoreCase("y") || extraMeatOption.equalsIgnoreCase("yes"));
+            System.out.println("Added Extra Meat!");
+
         } else {
             isExtraMeat = false;
         }
-
-
 
         String userToppingChoice = "";
 
@@ -393,6 +409,7 @@ public class UserInterface {
 
         Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat, toppingList);
         order.addSandwich(sandwich1);
+        System.out.println(sandwich1);
 
     }
 

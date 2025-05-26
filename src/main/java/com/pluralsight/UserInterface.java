@@ -85,6 +85,7 @@ public class UserInterface {
 
         ArrayList<Topping> toppingList = new ArrayList<>();
 
+
         System.out.println("Adding Sandwich to Order:");
         System.out.println(" ");
         System.out.println("Please Select a Sandwich Size:");
@@ -101,7 +102,22 @@ public class UserInterface {
         System.out.println("3 - Rye");
         System.out.println("4 - Wrap");
         System.out.println(" ");
-        int userBreadType = scanner.nextInt();
+        String userBreadType = scanner.nextLine();
+
+        switch (userBreadType) {
+            case "1":
+                userBreadType = "White";
+                break;
+            case "2":
+                userBreadType = "Wheat";
+                break;
+            case "3":
+                userBreadType = "Rye";
+                break;
+            case "4":
+                userBreadType = "Wrap";
+                break;
+        }
 
 
 
@@ -109,6 +125,7 @@ public class UserInterface {
 
         System.out.println("Do you Want Your Bread Toasted? ( Y / N )");
         System.out.println(" ");
+        boolean userBreadToasted = scanner.hasNextBoolean();
 
         String userInput = scanner.nextLine();
 
@@ -128,22 +145,23 @@ public class UserInterface {
             switch (userMeatChoice) {
 
                 case 1:
-                    new Meat("Steak");
+                    toppingList.add(new Meat("Steak"));
                     break;
                 case 2:
-                    new Meat("Ham");
+                   toppingList.add(new Meat("Ham"));
                     break;
                 case 3:
-                    new Meat("Salami");
+                    toppingList.add(new Meat("Salami"));
                     break;
                 case 4:
-                    new Meat("Roast Beef");
+                    toppingList.add(new Meat("Roast Beef"));
                     break;
                 case 5:
-                    new Meat("Chicken");
+                    toppingList.add(new Meat("Chicken"));
                     break;
                 case 6:
-                    new Meat("Bacon");
+                    toppingList.add(new Meat("Bacon"));
+                    break;
 
             }
 
@@ -238,7 +256,7 @@ public class UserInterface {
                 userInput = "next";
 
         }
-
+        Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted,   );
         order.addSandwich(sandwich);
 
 

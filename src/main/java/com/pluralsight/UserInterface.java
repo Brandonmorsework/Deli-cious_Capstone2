@@ -182,16 +182,16 @@ public class UserInterface {
             switch (userCheeseChoice) {
 
                 case 1:
-                    new Cheese("American");
+                    toppingList.add(new Cheese("American"));
                     break;
                 case 2:
-                    new Cheese("Provolone");
+                    toppingList.add(new Cheese("Provolone"));
                     break;
                 case 3:
-                    new Cheese("Cheddar");
+                    toppingList.add(new Cheese("Cheddar"));
                     break;
                 case 4:
-                    new Cheese("Swiss");
+                    toppingList.add(new Cheese("Swiss"));
                     break;
 
             }
@@ -199,9 +199,16 @@ public class UserInterface {
             userInput = "next";
         }
 
-
-
         System.out.println("Do you Want Extra Cheese? ( Y / N )");
+        String extraCheeseOption = scanner.nextLine();
+
+        if (extraCheeseOption.equalsIgnoreCase("y") || extraCheeseOption.equalsIgnoreCase("yes")) {
+            boolean isExtraCheese = true;
+        } else {
+            boolean isExtraCheese = false;
+        }
+
+
         System.out.println(" ");
         System.out.println("Do you Want Extra Meat? ( Y / N )");
 
@@ -225,39 +232,41 @@ public class UserInterface {
             switch (userToppingChoice) {
 
                 case 1:
-                    new RegularToppings("Lettuce");
+                    toppingList.add(new RegularToppings("Lettuce"));
                     break;
                 case 2:
-                    new RegularToppings("Peppers");
+                    toppingList.add(new RegularToppings("Peppers"));
                     break;
                 case 3:
-                    new RegularToppings("Onions");
+                    toppingList.add(new RegularToppings("Onions"));
                     break;
                 case 4:
-                    new RegularToppings("Tomatoes");
+                    toppingList.add(new RegularToppings("Tomatoes"));
                     break;
                 case 5:
-                    new RegularToppings("Jalapenos");
+                    toppingList.add(new RegularToppings("Jalapenos"));
                     break;
                 case 6:
-                    new RegularToppings("Cucumbers");
+                    toppingList.add(new RegularToppings("Cucumbers"));
                     break;
                 case 7:
-                    new RegularToppings("Pickles");
+                    toppingList.add(new RegularToppings("Pickles"));
                     break;
                 case 8:
-                    new RegularToppings("Guacamole");
+                    toppingList.add(new RegularToppings("Guacamole"));
                     break;
                 case 9:
-                    new RegularToppings("Mushrooms");
+                    toppingList.add(new RegularToppings("Mushrooms"));
                     break;
 
             }
+
                 userInput = "next";
 
         }
-        Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted,   );
-        order.addSandwich(sandwich);
+
+        Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat );
+        order.addSandwich(sandwich1);
 
 
     }

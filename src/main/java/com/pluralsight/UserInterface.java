@@ -159,7 +159,7 @@ public class UserInterface {
                         availableBread = true;
                         break;
                     default:
-                        System.out.println("Please Enter a Valid Number for the Bread Type!");
+                        System.out.println("Invalid! Please Enter a Number Between 1-4 for the Bread Type!");
 
                 }
             } catch (Exception e) {
@@ -241,12 +241,13 @@ public class UserInterface {
                         break;
                     case "next":
                         break;
-
+                    default:
+                        System.out.println("Invalid! Please Enter a Number Between 1-6 for the Meat Option");
                 }
 
             } catch (Exception e) {
 
-                System.out.println("Please Enter a Number for the Meat Topping!");
+                System.out.println("Please Enter a Number for the Meat Option!");
 
             }
         }
@@ -415,40 +416,92 @@ public class UserInterface {
 
     public void addDrink() {
 
-        String flavor;
-        int size;
-
-        flavor = scanner.nextLine();
-
-        size = scanner.nextInt();
-        scanner.nextLine();
-
         String userDrinkSizeChoice = "";
+
         while (!userDrinkSizeChoice.equalsIgnoreCase("next")) {
 
             System.out.println("Please Enter the Number of the Size of Drink You Would Like to Add. ");
-            System.out.println("Type 'next' to move on");
-            System.out.println("===== Drinks ====");
+            System.out.println("Type 'next' to Move on");
+            System.out.println("===== Drinks Sizes ====");
             System.out.println("1 - Small");
             System.out.println("2 - Medium");
             System.out.println("3 - Large");
+
             try {
 
+            userDrinkSizeChoice = scanner.nextLine();
+
+            switch (userDrinkSizeChoice) {
+
+                case "1":
+                    userDrinkSizeChoice = "small";
+                    break;
+                case "2":
+                    userDrinkSizeChoice = "medium";
+                    break;
+                case "3":
+                    userDrinkSizeChoice = "large";
+                case "next":
+                    break;
+                default:
+                    System.out.println("Invalid! Please Enter Either 1, 2, or 3!");
+
+
+            }
+
             } catch (Exception e) {
+                System.out.println("Invalid Number! Please Enter Either 1, 2, or 3!");
 
             }
         }
-        System.out.println("Please Enter the Number of the Flavor of Drink You Would Like to Add. ");
-        System.out.println("===== Drinks ====");
-        System.out.println(" ");
-        System.out.println("1 - Water");
-        System.out.println("2 - Coca-Cola");
-        System.out.println("3 - Sprite");
-        System.out.println("4 - Tea");
-        System.out.println("5 - Dr. Pepper ");
 
+        String userFlavorChoice = "";
 
-        Drink drink = new Drink(size, flavor);
+        while (!userFlavorChoice.equalsIgnoreCase("next")) {
+
+            System.out.println("Please Enter the Number of the Flavor of Drink You Would Like to Add. ");
+            System.out.println("Type 'next' to Move on");
+            System.out.println("===== Drinks Flavors ====");
+            System.out.println(" ");
+            System.out.println("1 - Water");
+            System.out.println("2 - Coca-Cola");
+            System.out.println("3 - Sprite");
+            System.out.println("4 - Tea");
+            System.out.println("5 - Dr. Pepper ");
+
+        try {
+
+            userFlavorChoice = scanner.nextLine();
+
+            switch (userFlavorChoice) {
+
+                case "1":
+                    userFlavorChoice = "Water";
+                    break;
+                case "2":
+                    userFlavorChoice = "Coca-Cola";
+                    break;
+                case "3":
+                    userFlavorChoice = "Sprite";
+                    break;
+                case "4":
+                    userFlavorChoice = "Tea";
+                    break;
+                case "5":
+                    userFlavorChoice = "Dr. Pepper";
+                    break;
+                case "next":
+                    break;
+                default:
+                    System.out.println("Invalid! Please Enter a Number Between 1-5!");
+            }
+
+        } catch (Exception e) {
+
+            System.out.println("Invalid Number! Please Enter a Number Between 1-5!");
+        }
+    }
+        Drink drink = new Drink(userDrinkSizeChoice, userFlavorChoice);
 
     }
 

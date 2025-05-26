@@ -86,9 +86,7 @@ public class UserInterface {
 
         ArrayList<Topping> toppingList = new ArrayList<>();
 
-
         int userSandwichSize = 0;
-
 
         boolean availableBreadSize = false;
         System.out.println("Adding Sandwich to Order:");
@@ -186,7 +184,7 @@ public class UserInterface {
 
         String userMeatChoice = "";
         boolean hasMeat = false;
-        boolean isExtraMeat = false;
+        boolean isExtraMeat;
 
         while (!userMeatChoice.equalsIgnoreCase("next")) {
 
@@ -255,7 +253,7 @@ public class UserInterface {
 
         String userCheeseChoice = "";
         boolean hasCheese = false;
-        boolean isExtraCheese = false;
+        boolean isExtraCheese;
 
         while (!userCheeseChoice.equalsIgnoreCase("next")) {
 
@@ -315,7 +313,9 @@ public class UserInterface {
             System.out.println("Added Extra Cheese!");
 
         } else {
+
             isExtraCheese = false;
+
         }
 
         if(hasMeat) {
@@ -415,6 +415,40 @@ public class UserInterface {
 
     public void addDrink() {
 
+        String flavor;
+        int size;
+
+        flavor = scanner.nextLine();
+
+        size = scanner.nextInt();
+        scanner.nextLine();
+
+        String userDrinkSizeChoice = "";
+        while (!userDrinkSizeChoice.equalsIgnoreCase("next")) {
+
+            System.out.println("Please Enter the Number of the Size of Drink You Would Like to Add. ");
+            System.out.println("Type 'next' to move on");
+            System.out.println("===== Drinks ====");
+            System.out.println("1 - Small");
+            System.out.println("2 - Medium");
+            System.out.println("3 - Large");
+            try {
+
+            } catch (Exception e) {
+
+            }
+        }
+        System.out.println("Please Enter the Number of the Flavor of Drink You Would Like to Add. ");
+        System.out.println("===== Drinks ====");
+        System.out.println(" ");
+        System.out.println("1 - Water");
+        System.out.println("2 - Coca-Cola");
+        System.out.println("3 - Sprite");
+        System.out.println("4 - Tea");
+        System.out.println("5 - Dr. Pepper ");
+
+
+        Drink drink = new Drink(size, flavor);
 
     }
 

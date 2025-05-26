@@ -86,6 +86,8 @@ public class UserInterface {
         ArrayList<Topping> toppingList = new ArrayList<>();
 
 
+        int userSandwichSize;
+
         System.out.println("Adding Sandwich to Order:");
         System.out.println(" ");
         System.out.println("Please Select a Sandwich Size:");
@@ -93,45 +95,71 @@ public class UserInterface {
         System.out.println(" 8 - 8 Inch Sandwich");
         System.out.println("12 - 12 Inch Sandwich");
         System.out.println(" ");
-        int userSandwichSize = scanner.nextInt();
+        userSandwichSize = scanner.nextInt();
+        scanner.nextLine();
 
-        System.out.println("Please Select a Bread Type: ");
-        System.out.println(" ");
-        System.out.println("1 - White");
-        System.out.println("2 - Wheat");
-        System.out.println("3 - Rye");
-        System.out.println("4 - Wrap");
-        System.out.println(" ");
-        String userBreadType = scanner.nextLine();
+        int userBreadTypeOption;
+        String userBreadType;
 
-        switch (userBreadType) {
-            case "1":
-                userBreadType = "White";
-                break;
-            case "2":
-                userBreadType = "Wheat";
-                break;
-            case "3":
-                userBreadType = "Rye";
-                break;
-            case "4":
-                userBreadType = "Wrap";
-                break;
+        boolean availableBread = false;
+
+        while (!availableBread) {
+
+            System.out.println("Please Select a Bread Type: ");
+            System.out.println(" ");
+            System.out.println("1 - White");
+            System.out.println("2 - Wheat");
+            System.out.println("3 - Rye");
+            System.out.println("4 - Wrap");
+            System.out.println(" ");
+
+            try {
+                userBreadTypeOption = scanner.nextInt();
+                scanner.nextLine();
+
+                switch (userBreadTypeOption) {
+                    case 1:
+                        userBreadType = "White";
+                        availableBread = true;
+                        break;
+                    case 2:
+                        userBreadType = "Wheat";
+                        availableBread = true;
+                        break;
+                    case 3:
+                        userBreadType = "Rye";
+                        availableBread = true;
+                        break;
+                    case 4:
+                        userBreadType = "Wrap";
+                        availableBread = true;
+                        break;
+                    default:
+                        System.out.println("Please Enter a Valid Number for the Bread Type!");
+
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid Response, Please Enter a Number!");
+                scanner.nextLine();
+            }
         }
-
-
-
-
 
         System.out.println("Do you Want Your Bread Toasted? ( Y / N )");
         System.out.println(" ");
-        boolean userBreadToasted = scanner.hasNextBoolean();
+        String userBreadToastedOption = scanner.nextLine();
+        boolean userBreadToasted;
+        if (userBreadToastedOption.equalsIgnoreCase("y") || userBreadToastedOption.equalsIgnoreCase("yes")) {
+            userBreadToasted = true;
+        } else {
+            userBreadToasted = false;
+        }
+
+        System.out.println("Please Add Your Meat Topping by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Meat");
 
         String userInput = scanner.nextLine();
 
         while (!userInput.equalsIgnoreCase("next")) {
 
-            System.out.println("Please Add Your Meat Topping by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Meat");
             System.out.println("Meat Toppings:");
             System.out.println("1 - Steak");
             System.out.println("2 - Ham");
@@ -140,32 +168,31 @@ public class UserInterface {
             System.out.println("5 - Chicken");
             System.out.println("6 - Bacon");
 
-            int userMeatChoice = scanner.nextInt();
+            String userMeatChoice = scanner.nextLine();
 
             switch (userMeatChoice) {
 
-                case 1:
+                case "1":
                     toppingList.add(new Meat("Steak"));
                     break;
-                case 2:
+                case "2":
                    toppingList.add(new Meat("Ham"));
                     break;
-                case 3:
+                case "3":
                     toppingList.add(new Meat("Salami"));
                     break;
-                case 4:
+                case "4":
                     toppingList.add(new Meat("Roast Beef"));
                     break;
-                case 5:
+                case "5":
                     toppingList.add(new Meat("Chicken"));
                     break;
-                case 6:
+                case "6":
                     toppingList.add(new Meat("Bacon"));
                     break;
+                case "next":
 
             }
-
-            userInput = "next";
         }
 
         while (!userInput.equalsIgnoreCase("next")) {
@@ -195,22 +222,27 @@ public class UserInterface {
                     break;
 
             }
-
-            userInput = "next";
         }
 
         System.out.println("Do you Want Extra Cheese? ( Y / N )");
         String extraCheeseOption = scanner.nextLine();
-
+        boolean isExtraCheese;
         if (extraCheeseOption.equalsIgnoreCase("y") || extraCheeseOption.equalsIgnoreCase("yes")) {
-            boolean isExtraCheese = true;
+            isExtraCheese = true;
         } else {
-            boolean isExtraCheese = false;
+            isExtraCheese = false;
         }
-
 
         System.out.println(" ");
         System.out.println("Do you Want Extra Meat? ( Y / N )");
+
+        String extraMeatOption = scanner.nextLine();
+        boolean isExtraMeat;
+        if (extraMeatOption.equalsIgnoreCase("y") || extraMeatOption.equalsIgnoreCase("yes")) {
+            isExtraMeat = true;
+        } else {
+            isExtraMeat = false;
+        }
 
         System.out.println("Please Add Your Included Toppings by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Them");
         System.out.println("Included Toppings:");
@@ -267,7 +299,6 @@ public class UserInterface {
 
         Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat );
         order.addSandwich(sandwich1);
-
 
     }
 

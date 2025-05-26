@@ -13,7 +13,7 @@ public class Sandwich {
 
     private ArrayList<Topping> toppings;
 
-    public Sandwich(int size, String breadType, boolean isToasted, boolean isExtraCheese, boolean isExtraMeat) {
+    public Sandwich(int size, String breadType, boolean isToasted, boolean isExtraCheese, boolean isExtraMeat, ArrayList<Topping> toppings) {
         this.size = size;
         this.isExtraCheese = isExtraCheese;
         this.isExtraMeat = isExtraMeat;

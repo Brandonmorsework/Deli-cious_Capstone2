@@ -202,21 +202,27 @@ public class UserInterface {
                     case "1":
 
                         toppingList.add(new Meat("Steak"));
+                        System.out.println("Added Steak!");
                         break;
                     case "2":
                         toppingList.add(new Meat("Ham"));
+                        System.out.println("Added Ham!");
                         break;
                     case "3":
                         toppingList.add(new Meat("Salami"));
+                        System.out.println("Added Salami!");
                         break;
                     case "4":
                         toppingList.add(new Meat("Roast Beef"));
+                        System.out.println("Added Roast Beef!");
                         break;
                     case "5":
                         toppingList.add(new Meat("Chicken"));
+                        System.out.println("Added Chicken!");
                         break;
                     case "6":
                         toppingList.add(new Meat("Bacon"));
+                        System.out.println("Added Bacon!");
                         break;
                     case "next":
                         break;
@@ -249,15 +255,19 @@ public class UserInterface {
 
                     case "1":
                         toppingList.add(new Cheese("American"));
+                        System.out.println("Added American Cheese!");
                         break;
                     case "2":
                         toppingList.add(new Cheese("Provolone"));
+                        System.out.println("Added Provolone Cheese!");
                         break;
                     case "3":
                         toppingList.add(new Cheese("Cheddar"));
+                        System.out.println("Added Cheddar Cheese!");
                         break;
                     case "4":
                         toppingList.add(new Cheese("Swiss"));
+                        System.out.println("Added Swiss Cheese!");
                         break;
                     case "next":
                         break;
@@ -316,30 +326,39 @@ public class UserInterface {
 
                     case "1":
                         toppingList.add(new RegularToppings("Lettuce"));
+                        System.out.println("Added Lettuce!");
                         break;
                     case "2":
                         toppingList.add(new RegularToppings("Peppers"));
+                        System.out.println("Added Peppers!");
                         break;
                     case "3":
                         toppingList.add(new RegularToppings("Onions"));
+                        System.out.println("Added Onions!");
                         break;
                     case "4":
                         toppingList.add(new RegularToppings("Tomatoes"));
+                        System.out.println("Added Tomatoes");
                         break;
                     case "5":
                         toppingList.add(new RegularToppings("Jalapenos"));
+                        System.out.println("Added Jalapenos!");
                         break;
                     case "6":
                         toppingList.add(new RegularToppings("Cucumbers"));
+                        System.out.println("Added Cucumbers!");
                         break;
                     case "7":
                         toppingList.add(new RegularToppings("Pickles"));
+                        System.out.println("Added Pickles!");
                         break;
                     case "8":
                         toppingList.add(new RegularToppings("Guacamole"));
+                        System.out.println("Added Guacamole!");
                         break;
                     case "9":
                         toppingList.add(new RegularToppings("Mushrooms"));
+                        System.out.println("Added Mushrooms!");
                         break;
                     case "next":
                         break;
@@ -351,7 +370,7 @@ public class UserInterface {
             }
         }
 
-        Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat );
+        Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat, toppingList);
         order.addSandwich(sandwich1);
 
     }

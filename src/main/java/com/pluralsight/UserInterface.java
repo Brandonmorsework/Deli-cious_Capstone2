@@ -117,7 +117,7 @@ public class UserInterface {
 
             } catch (Exception e) {
                 System.out.println(" ");
-                System.out.println("Invalid Response, Please Enter a Number!");
+                System.out.println("Invalid Response, Please Enter a Valid Number!");
                 System.out.println(" ");
                 scanner.nextLine();
             }
@@ -164,7 +164,7 @@ public class UserInterface {
 
                 }
             } catch (Exception e) {
-                System.out.println("Invalid Response, Please Enter a Number!");
+                System.out.println("Invalid Response, Please Enter a Valid Number!");
                 scanner.nextLine();
             }
         }
@@ -174,18 +174,20 @@ public class UserInterface {
         String userBreadToastedOption = scanner.nextLine();
         boolean userBreadToasted;
         if (userBreadToastedOption.equalsIgnoreCase("y") || userBreadToastedOption.equalsIgnoreCase("yes")) {
+            System.out.println("Your Bread Will be Toasted!");
             userBreadToasted = true;
         } else {
+            System.out.println("Your Bread Will Stay Un-Toasted!");
             userBreadToasted = false;
         }
 
-        System.out.println("Please Add Your Meat Topping by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Meat");
+        System.out.println("Please Add Your Meat Topping by Entering the Appropriate Number.");
 
             String userMeatChoice = "";
 
         while (!userMeatChoice.equalsIgnoreCase("next")) {
 
-            System.out.println("Meat Toppings:");
+            System.out.println("Meat Toppings: Type 'next' When you are Finished Adding Meat. ");
             System.out.println("1 - Steak");
             System.out.println("2 - Ham");
             System.out.println("3 - Salami");
@@ -203,26 +205,32 @@ public class UserInterface {
 
                         toppingList.add(new Meat("Steak"));
                         System.out.println("Added Steak!");
+                        System.out.println(" ");
                         break;
                     case "2":
                         toppingList.add(new Meat("Ham"));
                         System.out.println("Added Ham!");
+                        System.out.println(" ");
                         break;
                     case "3":
                         toppingList.add(new Meat("Salami"));
                         System.out.println("Added Salami!");
+                        System.out.println(" ");
                         break;
                     case "4":
                         toppingList.add(new Meat("Roast Beef"));
                         System.out.println("Added Roast Beef!");
+                        System.out.println(" ");
                         break;
                     case "5":
                         toppingList.add(new Meat("Chicken"));
                         System.out.println("Added Chicken!");
+                        System.out.println(" ");
                         break;
                     case "6":
                         toppingList.add(new Meat("Bacon"));
                         System.out.println("Added Bacon!");
+                        System.out.println(" ");
                         break;
                     case "next":
                         break;
@@ -240,8 +248,8 @@ public class UserInterface {
 
         while (!userCheeseChoice.equalsIgnoreCase("next")) {
 
-            System.out.println("Please Add Your Cheese Topping by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Cheese");
-            System.out.println("Cheese Toppings:");
+            System.out.println("Please Add Your Cheese Topping by Entering the Appropriate Number.");
+            System.out.println("Cheese Toppings: Type 'next' When You Are Finished Adding Cheese.");
             System.out.println("1 - American");
             System.out.println("2 - Provolone");
             System.out.println("3 - Cheddar");
@@ -256,18 +264,22 @@ public class UserInterface {
                     case "1":
                         toppingList.add(new Cheese("American"));
                         System.out.println("Added American Cheese!");
+                        System.out.println(" ");
                         break;
                     case "2":
                         toppingList.add(new Cheese("Provolone"));
                         System.out.println("Added Provolone Cheese!");
+                        System.out.println(" ");
                         break;
                     case "3":
                         toppingList.add(new Cheese("Cheddar"));
                         System.out.println("Added Cheddar Cheese!");
+                        System.out.println(" ");
                         break;
                     case "4":
                         toppingList.add(new Cheese("Swiss"));
                         System.out.println("Added Swiss Cheese!");
+                        System.out.println(" ");
                         break;
                     case "next":
                         break;
@@ -327,38 +339,47 @@ public class UserInterface {
                     case "1":
                         toppingList.add(new RegularToppings("Lettuce"));
                         System.out.println("Added Lettuce!");
+                        System.out.println(" ");
                         break;
                     case "2":
                         toppingList.add(new RegularToppings("Peppers"));
                         System.out.println("Added Peppers!");
+                        System.out.println(" ");
                         break;
                     case "3":
                         toppingList.add(new RegularToppings("Onions"));
                         System.out.println("Added Onions!");
+                        System.out.println(" ");
                         break;
                     case "4":
                         toppingList.add(new RegularToppings("Tomatoes"));
                         System.out.println("Added Tomatoes");
+                        System.out.println(" ");
                         break;
                     case "5":
                         toppingList.add(new RegularToppings("Jalapenos"));
                         System.out.println("Added Jalapenos!");
+                        System.out.println(" ");
                         break;
                     case "6":
                         toppingList.add(new RegularToppings("Cucumbers"));
                         System.out.println("Added Cucumbers!");
+                        System.out.println(" ");
                         break;
                     case "7":
                         toppingList.add(new RegularToppings("Pickles"));
                         System.out.println("Added Pickles!");
+                        System.out.println(" ");
                         break;
                     case "8":
                         toppingList.add(new RegularToppings("Guacamole"));
                         System.out.println("Added Guacamole!");
+                        System.out.println(" ");
                         break;
                     case "9":
                         toppingList.add(new RegularToppings("Mushrooms"));
                         System.out.println("Added Mushrooms!");
+                        System.out.println(" ");
                         break;
                     case "next":
                         break;

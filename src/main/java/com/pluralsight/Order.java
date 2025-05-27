@@ -9,10 +9,10 @@ public class Order {
     private List<Drink> drinks = new ArrayList<>();
     private List<Chips> chips = new ArrayList<>();
 
-    public Order(List<Sandwich> sandwiches, List<Drink> drinks, List<Chips> chips) {
-        this.sandwiches = sandwiches;
-        this.drinks = drinks;
-        this.chips = chips;
+    public Order() {
+        this.sandwiches = new ArrayList<>();
+        this.drinks = new ArrayList<>();
+        this.chips = new ArrayList<>();
     }
 
     public List<Sandwich> getSandwiches() {
@@ -23,20 +23,24 @@ public class Order {
         this.sandwiches = sandwiches;
     }
 
+    public void addSandwich(Sandwich sandwich) {
+        this.sandwiches.add(sandwich);
+    }
+
     public List<Drink> getDrinks() {
         return drinks;
     }
 
-    public void setDrinks(List<Drink> drinks) {
-        this.drinks = drinks;
+    public void addDrinks(Drink drink) {
+        this.drinks.add(drink);
     }
 
     public List<Chips> getChips() {
         return chips;
     }
 
-    public void setChips(List<Chips> chips) {
-        this.chips = chips;
+    public void addChips(Chips chips) {
+        this.chips.add(chips);
     }
 
     public double calculateTotal() {

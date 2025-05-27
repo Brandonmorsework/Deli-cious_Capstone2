@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -513,7 +514,7 @@ public class UserInterface {
 
             if (!userDrinkSize.isEmpty() && !userFlavor.isEmpty()) {
                 Drink drink = new Drink(userDrinkSize, userFlavor);
-                order.addDrink(drink);
+                order.addDrinks(drink);
                 System.out.println(userDrinkSize + " " +  userFlavor + " " + "Successfully Added!");
                 System.out.println(" ");
             } else {
@@ -609,6 +610,7 @@ public class UserInterface {
     // THIS METHOD WILL TAKE THE SANDWICH WITH TOPPINGS, DRINKS AND CHIPS AND DISPLAY THEM TO THE USER TO ASK FOR CONFIRMATION
 
     public void checkOut() {
+
 
 
     }

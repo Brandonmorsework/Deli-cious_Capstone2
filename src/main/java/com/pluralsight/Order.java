@@ -6,30 +6,36 @@ import java.util.List;
 public class Order {
 
     private List<Sandwich> sandwiches = new ArrayList<>();
-    private Drink drink;
-    private Chips chips;
+    private List<Drink> drinks = new ArrayList<>();
+    private List<Chips> chips = new ArrayList<>();
 
-    public void addSandwich(Sandwich sandwich) {
-        sandwiches.add(sandwich);
+    public Order(List<Sandwich> sandwiches, List<Drink> drinks, List<Chips> chips) {
+        this.sandwiches = sandwiches;
+        this.drinks = drinks;
+        this.chips = chips;
     }
 
     public List<Sandwich> getSandwiches() {
         return sandwiches;
     }
 
-    public Drink getDrink() {
-        return drink;
+    public void setSandwiches(List<Sandwich> sandwiches) {
+        this.sandwiches = sandwiches;
     }
 
-    public void addDrink(Drink drink) {
-        this.drink = drink;
+    public List<Drink> getDrinks() {
+        return drinks;
     }
 
-    public Chips getChips() {
+    public void setDrinks(List<Drink> drinks) {
+        this.drinks = drinks;
+    }
+
+    public List<Chips> getChips() {
         return chips;
     }
 
-    public void setChips(Chips chips) {
+    public void setChips(List<Chips> chips) {
         this.chips = chips;
     }
 
@@ -40,13 +46,14 @@ public class Order {
             totalPrice += sandwich.getPrice();
         }
 
-        if (chips != null) {
+        for (Chips chips : chips) {
             totalPrice += chips.getPrice();
         }
 
-        if (drink != null) {
+        for (Drink drink : drinks) {
             totalPrice += drink.getPrice(drink.getSize());
         }
+
         return totalPrice;
     }
 

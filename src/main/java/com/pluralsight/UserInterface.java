@@ -82,6 +82,8 @@ public class UserInterface {
         }
     }
 
+    // ADDING A SANDWICH TO THE UNCONFIRMED ORDER
+
     public void addSandwich() {
 
         ArrayList<Topping> toppingList = new ArrayList<>();
@@ -308,6 +310,9 @@ public class UserInterface {
 
             }
         }
+
+        // ONLY ASK THE USER IF THEY WANT EXTRA CHEESE OR EXTRA MEAT IF THEY ADDED IT TO THEIR SANDWICH
+
         if (hasCheese) {
             System.out.println("Do you Want Extra Cheese? ( Y / N )");
             String extraCheeseOption = scanner.nextLine();
@@ -410,11 +415,13 @@ public class UserInterface {
             }
         }
 
-        Sandwich sandwich1 = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat, toppingList);
-        order.addSandwich(sandwich1);
-        System.out.println(sandwich1);
+        Sandwich sandwich = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat, toppingList);
+        order.addSandwich(sandwich);
+        System.out.println(sandwich);
 
     }
+
+    // ADDING DRINKS TO THE UNCONFIRMED ORDER
 
     public void addDrink() {
 
@@ -515,17 +522,16 @@ public class UserInterface {
             }
     }
 
+ // ADDING CHIPS TO THE UNCONFIRMED ORDER
+
     public void addChips() {
 
-    String chipType = "";
+    String chipType;
 
     String chipTypeChoice = "";
 
-
-    while (!chipTypeChoice.equalsIgnoreCase("next")) {
-
         System.out.println("Please Enter the Number of the Chips You Would Like to Add. ");
-        System.out.println("When Finished, Type 'next' to Move on Back to the Home Menu");
+        System.out.println("When Finished, Type 'next' to go Back to the Home Menu");
         System.out.println("===== Chips ====");
         System.out.println("1 - Cool Ranch Doritos");
         System.out.println("2 - Nacho Cheese Doritos");
@@ -543,29 +549,44 @@ public class UserInterface {
 
              case "1":
                  chipTypeChoice = "Cool Ranch Doritos";
+                 System.out.println("Added" + " " + chipTypeChoice + "!");
+                 System.out.println(" ");
                  break;
              case "2":
                  chipTypeChoice = "Nacho Cheese Doritos";
+                 System.out.println("Added" + " " + chipTypeChoice + "!");
+                 System.out.println(" ");
                  break;
              case "3":
                  chipTypeChoice = "Cheetos";
+                 System.out.println("Added" + " " + chipTypeChoice + "!");
+                 System.out.println(" ");
                  break;
              case "4":
                  chipTypeChoice = "Ruffles";
+                 System.out.println("Added" + " " + chipTypeChoice + "!");
+                 System.out.println(" ");
                  break;
              case "5":
                  chipTypeChoice = "Lay's Barbecue";
+                 System.out.println("Added" + " " + chipTypeChoice + "!");
+                 System.out.println(" ");
                  break;
              case "6":
                  chipTypeChoice = "White Cheddar Popcorn";
+                 System.out.println("Added" + " " + chipTypeChoice + "!");
+                 System.out.println(" ");
                  break;
              case "7":
                  chipTypeChoice = "Fritos";
+                 System.out.println("Added" + " " + chipTypeChoice + "!");
+                 System.out.println(" ");
                  break;
              case "next":
                  break;
              default:
                  System.out.println("Please Enter a Valid Number Between 1-7!");
+                 System.out.println(" ");
 
          }
 
@@ -573,16 +594,26 @@ public class UserInterface {
 
             System.out.println("Invalid Number Provided, Please Enter a Number Between 1-7!");
 
+
+    }
+        if (!chipTypeChoice.isEmpty() && !chipTypeChoice.equalsIgnoreCase("next")) {
+            Chips chips = new Chips(chipTypeChoice);
+            order.addChips(chips);
+            System.out.println(chipTypeChoice + " Successfully Added to Order!");
+        } else {
+            System.out.println("No Chips Added...");
+            System.out.println("Going Back Home...");
         }
-
     }
 
-    }
+    // THIS METHOD WILL TAKE THE SANDWICH WITH TOPPINGS, DRINKS AND CHIPS AND DISPLAY THEM TO THE USER TO ASK FOR CONFIRMATION
 
     public void checkOut() {
 
 
     }
+
+    //THIS METHOD WILL CLEAR ALL LISTS AND RETURN THE USER TO THE HOME MENU
 
     public void goHome() {
 

@@ -622,21 +622,37 @@ public class UserInterface {
         System.out.println("==== Check Out ====");
         System.out.println(" ");
 
-        if (order.getSandwiches().isEmpty() && order.getDrinks().isEmpty() && order.getChips().isEmpty()) {
-            if (!order.getSandwiches().isEmpty() && (!order.getDrinks().isEmpty() || !order.getChips().isEmpty())) {
+        if (!sandwiches.isEmpty() || !drinks.isEmpty() || !chip.isEmpty()) {
+            if (!sandwiches.isEmpty()) {
                 for (Sandwich sandwich : sandwiches) {
 
-                    System.out.println(sandwich.getSize());
-                    System.out.println(sandwich.getBreadType());
-                    System.out.println(sandwich.isToasted());
-                    System.out.println(sandwich.getToppings());
-                    System.out.println(sandwich.isExtraMeat());
-                    System.out.println(sandwich.isExtraCheese());
+
+                   if (sandwich.isToasted()) {
+                       System.out.println("Toasted " + sandwich.getSize() + " Inch " + sandwich.getBreadType() + " Bread");
+
+                   } else {
+                       System.out.println(sandwich.getSize() + " Inch " + sandwich.getBreadType() + " Bread");
+                   }
+
+
+                    for (Topping topping : sandwich.getToppings()) {
+                        System.out.println(" - " + topping.getToppingType());
+                    }
+
+                    if (sandwich.isExtraCheese()) {
+                        System.out.println("Extra Cheese: " + (sandwich.isExtraCheese() ? "Yes" : "No"));
+                    }
+
+                    if (sandwich.isExtraMeat()) {
+                        System.out.println("Extra Meat: " + (sandwich.isExtraMeat() ? "Yes" : "No"));
+                    }
+
 
                 }
 
             } else {
                 System.out.println("No Sandwiches Added");
+                System.out.println(" ");
             }
 
             System.out.println(" ==== Chips ====");
@@ -654,11 +670,13 @@ public class UserInterface {
             } else {
 
                 System.out.println("No Chips Added");
+                System.out.println(" ");
 
             }
 
 
             System.out.println(" ==== Drinks ====");
+            System.out.println(" ");
 
             if (!drinks.isEmpty()) {
 
@@ -671,6 +689,7 @@ public class UserInterface {
             } else {
 
                 System.out.println("No Drinks Added");
+                System.out.println(" ");
 
             }
 
@@ -678,10 +697,13 @@ public class UserInterface {
             System.out.println("Total: ");
             System.out.println(" ");
             System.out.println(order.calculateTotal());
+            System.out.println(" ");
 
         } else {
+
             System.out.println("Nothing Added to Order...");
             System.out.println("Returning Home...");
+
         }
     }
 

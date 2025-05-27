@@ -418,7 +418,7 @@ public class UserInterface {
 
         Sandwich sandwich = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat, toppingList);
         order.addSandwich(sandwich);
-        System.out.println(sandwich);
+        System.out.println("Sandwich Successfully Added!");
 
     }
 
@@ -636,7 +636,7 @@ public class UserInterface {
 
 
                     for (Topping topping : sandwich.getToppings()) {
-                        System.out.println(" - " + topping.getToppingType());
+                        System.out.println(" -     " + topping.getToppingType());
                     }
 
                     if (sandwich.isExtraCheese()) {
@@ -647,7 +647,7 @@ public class UserInterface {
                         System.out.println("Extra Meat: " + (sandwich.isExtraMeat() ? "Yes" : "No"));
                     }
 
-
+                    System.out.println(" ");
                 }
 
             } else {
@@ -655,7 +655,7 @@ public class UserInterface {
                 System.out.println(" ");
             }
 
-            System.out.println(" ==== Chips ====");
+
             System.out.println(" ");
 
             if (!chip.isEmpty()) {
@@ -669,13 +669,12 @@ public class UserInterface {
 
             } else {
 
-                System.out.println("No Chips Added");
                 System.out.println(" ");
 
             }
 
 
-            System.out.println(" ==== Drinks ====");
+
             System.out.println(" ");
 
             if (!drinks.isEmpty()) {
@@ -696,8 +695,30 @@ public class UserInterface {
             System.out.println(" ");
             System.out.println("Total: ");
             System.out.println(" ");
-            System.out.println(order.calculateTotal());
+            System.out.println(order.calculateTotal() + " is Your Total");
             System.out.println(" ");
+            System.out.println("Confirm Order to Receive Receipt?  ( Y / N )");
+
+            boolean userOption;
+
+            String userYesOrNo = scanner.nextLine();
+
+
+            if (userYesOrNo.equalsIgnoreCase("y") || userYesOrNo.equalsIgnoreCase("yes")) {
+                userOption = true;
+                System.out.println("Thank you for Using the Deli! Come Again!");
+
+            } else {
+                userOption = false;
+                System.out.println("Returning Home...");
+
+            }
+
+        if (userOption) {
+            //
+        } else {
+
+        }
 
         } else {
 

@@ -19,7 +19,7 @@ public class Sandwich {
         this.isExtraMeat = isExtraMeat;
         this.isToasted = isToasted;
         this.breadType = breadType;
-        this.toppings = new ArrayList<>();
+        this.toppings = toppings;
     }
 
     public int getSize() {
@@ -112,17 +112,5 @@ public class Sandwich {
     }
 
         return finalPrice;
-    }
-
-    @Override
-    public String toString() {
-        return "Sandwich{" +
-                "size=" + size +
-                ", isExtraCheese=" + isExtraCheese +
-                ", isExtraMeat=" + isExtraMeat +
-                ", isToasted=" + isToasted +
-                ", breadType='" + breadType + '\'' +
-                ", toppings=" + toppings +
-                '}';
     }
 }

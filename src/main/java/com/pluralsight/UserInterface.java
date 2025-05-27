@@ -312,14 +312,21 @@ public class UserInterface {
             }
         }
 
-        // ONLY ASK THE USER IF THEY WANT EXTRA CHEESE OR EXTRA MEAT IF THEY ADDED IT TO THEIR SANDWICH
+        // ONLY ASK THE USER IF THEY WANT EXTRA CHEESE OR EXTRA MEAT IF THEY ADDED IT TO THEIR SANDWICH BEFORE
 
         if (hasCheese) {
             System.out.println("Do you Want Extra Cheese? ( Y / N )");
             String extraCheeseOption = scanner.nextLine();
 
             isExtraCheese = (extraCheeseOption.equalsIgnoreCase("y") || extraCheeseOption.equalsIgnoreCase("yes"));
-            System.out.println("Added Extra Cheese!");
+
+            if (isExtraCheese) {
+
+                System.out.println("Added Extra Cheese!");
+
+            } else {
+                System.out.println("No Extra Cheese Will be Added");
+            }
 
         } else {
 
@@ -327,16 +334,26 @@ public class UserInterface {
 
         }
 
-        if(hasMeat) {
+        if (hasMeat) {
         System.out.println(" ");
         System.out.println("Do you Want Extra Meat? ( Y / N )");
         String extraMeatOption = scanner.nextLine();
 
         isExtraMeat = (extraMeatOption.equalsIgnoreCase("y") || extraMeatOption.equalsIgnoreCase("yes"));
+
+        if (isExtraMeat) {
+
             System.out.println("Added Extra Meat!");
 
         } else {
+
+            System.out.println("No Extra Meat Will be Added");
+
+        }
+
+        } else {
             isExtraMeat = false;
+
         }
 
         String userToppingChoice = "";
@@ -714,11 +731,7 @@ public class UserInterface {
 
             }
 
-        if (userOption) {
-            //
-        } else {
 
-        }
 
         } else {
 

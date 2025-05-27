@@ -298,6 +298,8 @@ public class UserInterface {
                         break;
                     case "next":
                         break;
+                    default:
+                        System.out.println("Please Enter a Valid Number Between 1-4!");
 
                 }
 
@@ -416,7 +418,7 @@ public class UserInterface {
 
     public void addDrink() {
 
-        String userDrinkSizeChoice = "";
+        String userDrinkSizeChoice;
         String userDrinkSize = "";
 
 
@@ -456,7 +458,7 @@ public class UserInterface {
             }
 
 
-            String userFlavorChoice = "";
+            String userFlavorChoice;
             String userFlavor = "";
 
 
@@ -505,16 +507,75 @@ public class UserInterface {
             if (!userDrinkSize.isEmpty() && !userFlavor.isEmpty()) {
                 Drink drink = new Drink(userDrinkSize, userFlavor);
                 order.addDrink(drink);
-                System.out.println(userDrinkSize + userFlavor + "Successfully Added!");
+                System.out.println(userDrinkSize + " " +  userFlavor + " " + "Successfully Added!");
+                System.out.println(" ");
             } else {
                 System.out.println("No Drinks Added...");
                 System.out.println("Going Back Home...");
             }
-
     }
 
     public void addChips() {
 
+    String chipType = "";
+
+    String chipTypeChoice = "";
+
+
+    while (!chipTypeChoice.equalsIgnoreCase("next")) {
+
+        System.out.println("Please Enter the Number of the Chips You Would Like to Add. ");
+        System.out.println("When Finished, Type 'next' to Move on Back to the Home Menu");
+        System.out.println("===== Chips ====");
+        System.out.println("1 - Cool Ranch Doritos");
+        System.out.println("2 - Nacho Cheese Doritos");
+        System.out.println("3 - Cheetos");
+        System.out.println("4 - Ruffles");
+        System.out.println("5 - Lay's Barbecue");
+        System.out.println("6 - White Cheddar Popcorn");
+        System.out.println("7 - Fritos");
+
+        try {
+
+            chipType = scanner.nextLine();
+
+         switch (chipType) {
+
+             case "1":
+                 chipTypeChoice = "Cool Ranch Doritos";
+                 break;
+             case "2":
+                 chipTypeChoice = "Nacho Cheese Doritos";
+                 break;
+             case "3":
+                 chipTypeChoice = "Cheetos";
+                 break;
+             case "4":
+                 chipTypeChoice = "Ruffles";
+                 break;
+             case "5":
+                 chipTypeChoice = "Lay's Barbecue";
+                 break;
+             case "6":
+                 chipTypeChoice = "White Cheddar Popcorn";
+                 break;
+             case "7":
+                 chipTypeChoice = "Fritos";
+                 break;
+             case "next":
+                 break;
+             default:
+                 System.out.println("Please Enter a Valid Number Between 1-7!");
+
+         }
+
+        } catch (Exception e) {
+
+            System.out.println("Invalid Number Provided, Please Enter a Number Between 1-7!");
+
+        }
+
+    }
 
     }
 

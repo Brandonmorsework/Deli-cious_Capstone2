@@ -598,12 +598,16 @@ public class UserInterface {
 
     }
         if (!chipTypeChoice.isEmpty() && !chipTypeChoice.equalsIgnoreCase("next")) {
-            Chips chips = new Chips(chipTypeChoice);
-            order.addChips(chips);
+
+            Chips chip = new Chips(chipTypeChoice);
+            order.addChips(chip);
             System.out.println(chipTypeChoice + " Successfully Added to Order!");
+
         } else {
+
             System.out.println("No Chips Added...");
             System.out.println("Going Back Home...");
+
         }
     }
 
@@ -611,9 +615,76 @@ public class UserInterface {
 
     public void checkOut() {
 
+        List<Sandwich> sandwiches = order.getSandwiches();
+        List<Drink> drinks = order.getDrinks();
+        List<Chips> chip = order.getChips();
+
+        System.out.println("==== Check Out ====");
+        System.out.println(" ");
+
+        if (order.isEmpty()) {
+            if (!sandwich.isEmpty()) {
+                for (Sandwich sandwich : sandwiches) {
+
+                    System.out.println(sandwich.getSize());
+                    System.out.println(sandwich.getBreadType());
+                    System.out.println(sandwich.isToasted());
+                    System.out.println(sandwich.getToppings());
+                    System.out.println(sandwich.isExtraMeat());
+                    System.out.println(sandwich.isExtraCheese());
+                }
+
+            } else {
+                System.out.println("No Sandwiches Added");
+            }
+
+            System.out.println(" ==== Chips ====");
+            System.out.println(" ");
+
+            if (!chip.isEmpty()) {
+
+                for (Chips chip : chips) {
+
+                    System.out.println(chip.getType());
+
+                }
 
 
+            } else {
+
+                System.out.println("No Chips Added");
+
+            }
+
+
+            System.out.println(" ==== Drinks ====");
+
+            if (!drinks.isEmpty()) {
+
+                for (Drinks drink : drinks) {
+
+                    System.out.println(drink.getDrink(flavor, size));
+
+                }
+
+            } else {
+
+                System.out.println("No Drinks Added");
+
+            }
+
+
+            System.out.println("Total: ");
+            System.out.println(" ");
+            System.out.println(order.calculateTotal());
+
+        } else {
+            System.out.println("Nothing Added to Order...");
+            System.out.println("Returning Home...");
+        }
     }
+
+
 
     //THIS METHOD WILL CLEAR ALL LISTS AND RETURN THE USER TO THE HOME MENU
 

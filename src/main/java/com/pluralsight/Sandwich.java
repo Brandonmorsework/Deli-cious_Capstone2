@@ -72,7 +72,7 @@ public class Sandwich {
 
     public double getPrice() {
 
-        double finalPrice = 0;
+        double finalPrice;
         double addedExtraMeatTopping = 0;
         double addedExtraCheeseTopping = 0;
         double breadLengthCost = 0;

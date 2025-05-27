@@ -24,7 +24,7 @@ public class UserInterface {
             System.out.println(" ");
             System.out.println("1 - New Order");
             System.out.println("0 - Exit the Deli");
-
+            System.out.println(" ");
             System.out.println("Enter your Choice:");
             System.out.println(" ");
             int choice = scanner.nextInt();
@@ -710,8 +710,6 @@ public class UserInterface {
             }
 
             System.out.println(" ");
-            System.out.println("Total: ");
-            System.out.println(" ");
             System.out.println(order.calculateTotal() + " is Your Total");
             System.out.println(" ");
             System.out.println("Confirm Order to Receive Receipt?  ( Y / N )");
@@ -731,19 +729,21 @@ public class UserInterface {
 
             }
 
-
-
         } else {
 
             System.out.println("Nothing Added to Order...");
             System.out.println("Returning Home...");
 
         }
+
+        OrderFileManager orderFileManager = new OrderFileManager();
+        orderFileManager.createReceiptFile();
+
     }
 
 
 
-    //THIS METHOD WILL CLEAR ALL LISTS AND RETURN THE USER TO THE HOME MENU
+    //THIS METHOD WILL CLEAR ALL USER ENTRIES AND RETURN THE USER TO THE HOME MENU
 
     public void goHome() {
 

@@ -24,7 +24,7 @@ public class Order {
     }
 
     public void addSandwich(Sandwich sandwich) {
-        this.sandwiches.add(sandwich);
+        sandwiches.add(sandwich);
     }
 
     public List<Drink> getDrinks() {

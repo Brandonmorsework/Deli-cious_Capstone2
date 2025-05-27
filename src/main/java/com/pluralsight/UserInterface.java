@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-    private Sandwich sandwich;
     private Scanner scanner;
     private Order order;
 
@@ -714,17 +713,17 @@ public class UserInterface {
             System.out.println(" ");
             System.out.println("Confirm Order to Receive Receipt?  ( Y / N )");
 
-            boolean userOption;
+
 
             String userYesOrNo = scanner.nextLine();
 
 
             if (userYesOrNo.equalsIgnoreCase("y") || userYesOrNo.equalsIgnoreCase("yes")) {
-                userOption = true;
+
                 System.out.println("Thank you for Using the Deli! Come Again!");
 
             } else {
-                userOption = false;
+
                 System.out.println("Returning Home...");
 
             }

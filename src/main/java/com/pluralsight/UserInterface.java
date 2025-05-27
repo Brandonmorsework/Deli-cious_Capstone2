@@ -622,8 +622,8 @@ public class UserInterface {
         System.out.println("==== Check Out ====");
         System.out.println(" ");
 
-        if (order.isEmpty()) {
-            if (!sandwich.isEmpty()) {
+        if (order.getSandwiches().isEmpty() && order.getDrinks().isEmpty() && order.getChips().isEmpty()) {
+            if (!order.getSandwiches().isEmpty() && (!order.getDrinks().isEmpty() || !order.getChips().isEmpty())) {
                 for (Sandwich sandwich : sandwiches) {
 
                     System.out.println(sandwich.getSize());
@@ -632,6 +632,7 @@ public class UserInterface {
                     System.out.println(sandwich.getToppings());
                     System.out.println(sandwich.isExtraMeat());
                     System.out.println(sandwich.isExtraCheese());
+
                 }
 
             } else {
@@ -643,9 +644,9 @@ public class UserInterface {
 
             if (!chip.isEmpty()) {
 
-                for (Chips chip : chips) {
+                for (Chips chips : chip) {
 
-                    System.out.println(chip.getType());
+                    System.out.println(chips.getType());
 
                 }
 
@@ -661,9 +662,9 @@ public class UserInterface {
 
             if (!drinks.isEmpty()) {
 
-                for (Drinks drink : drinks) {
+                for (Drink drink : drinks) {
 
-                    System.out.println(drink.getDrink(flavor, size));
+                    System.out.println(drink.getSize() + " " + drink.getFlavor());
 
                 }
 
@@ -673,7 +674,7 @@ public class UserInterface {
 
             }
 
-
+            System.out.println(" ");
             System.out.println("Total: ");
             System.out.println(" ");
             System.out.println(order.calculateTotal());

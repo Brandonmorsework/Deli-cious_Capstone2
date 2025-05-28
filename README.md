@@ -21,7 +21,7 @@
 3. Create the UserInterface class which includes user options and while loops with try catches for handling user input.
 4. Create the OrderFileManager class that creates the receipts and stores the customer order information including total prices.
 5. Create the Order class that handles adding the lists together to calculate the total price for OrderFileManager.
-6. Create the MainProgram that runs the
+6. Create the MainProgram that runs the Application
 
 ### Prerequisites
 
@@ -44,11 +44,11 @@ Follow these steps to get your Financial Tracker Application running within Inte
 
 ## Demo
 
-![Application Screenshot](ApplicationScreenshotDateRanges.png)
-![Application Screenshot_B](ApplicationScreenshot_B.png)
-![Application Screenshot_C](ApplicationScreenshot_C.png)
-![Application Screenshot_D](ApplicationScreenshot_D.png)
-![Application Screenshot E](ApplicationScreenshot_E.png)
+![Application Screenshot_A](Deli_Application_Screenshot_A.png)
+![Application Screenshot_B](Deli_Application_Screenshot_B.png)
+![Application Screenshot_C](Deli_Application_Screenshot_C.png)
+![Application Screenshot_D](Deli_Application_Screenshot_D.png)
+![Application Screenshot E](Deli_Application_Screenshot_E.png)
 
 ## Future Work
 

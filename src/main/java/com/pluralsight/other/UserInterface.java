@@ -109,7 +109,7 @@ public class UserInterface {
                 userSandwichSize = scanner.nextInt();
                 scanner.nextLine();
 
-                if (userSandwichSize == 1 || userSandwichSize == 2 || userSandwichSize == 3) {
+                if (userSandwichSize == 4 || userSandwichSize == 8 || userSandwichSize == 12) {
                     availableBreadSize = true;
                 } else {
                     System.out.println(" ");

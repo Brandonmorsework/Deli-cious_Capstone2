@@ -41,6 +41,6 @@ public class Drink {
 
     @Override
     public String toString() {
-        return size + " " + flavor + " - " + getPrice(size);
+        return size + " " + flavor;
     }
 }

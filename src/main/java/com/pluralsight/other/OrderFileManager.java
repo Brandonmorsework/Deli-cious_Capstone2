@@ -52,7 +52,6 @@ public class OrderFileManager {
 
         }
 
-
         System.out.println("Receipt Successfully Added!");
 
     }

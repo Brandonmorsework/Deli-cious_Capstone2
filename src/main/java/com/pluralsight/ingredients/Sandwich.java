@@ -94,4 +94,25 @@ public class Sandwich {
 
         return finalPrice;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        if (isToasted) {
+            sb.append("Toasted ");
+        }
+        sb.append(size).append(" Inch ").append(breadType).append(" Bread\n");
+
+        for (Topping topping : toppings) {
+            sb.append(" -     ").append(topping.getToppingType()).append("\n");
+        }
+
+        sb.append("Extra Cheese: ").append(isExtraCheese ? "Yes" : "No").append("\n");
+        sb.append("Extra Meat: ").append(isExtraMeat ? "Yes" : "No").append("\n");
+
+
+
+        return sb.toString();
+    }
 }

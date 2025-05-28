@@ -18,4 +18,8 @@ public class Chips {
 
     }
 
+    @Override
+    public String toString() {
+        return type;
+    }
 }

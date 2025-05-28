@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.ingredients;
 
 public class Cheese extends Topping {
 

@@ -1,6 +1,5 @@
-package com.pluralsight;
+package com.pluralsight.ingredients;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

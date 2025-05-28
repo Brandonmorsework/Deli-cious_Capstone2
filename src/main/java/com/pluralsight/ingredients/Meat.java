@@ -1,6 +1,6 @@
-package com.pluralsight;
+package com.pluralsight.ingredients;
 
-public class Meat extends Topping{
+public class Meat extends Topping {
 
     public Meat(String toppingType) {
         super(toppingType);

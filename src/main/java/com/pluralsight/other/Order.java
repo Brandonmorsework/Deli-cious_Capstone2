@@ -1,4 +1,8 @@
-package com.pluralsight;
+package com.pluralsight.other;
+
+import com.pluralsight.ingredients.Chips;
+import com.pluralsight.ingredients.Drink;
+import com.pluralsight.ingredients.Sandwich;
 
 import java.util.ArrayList;
 import java.util.List;

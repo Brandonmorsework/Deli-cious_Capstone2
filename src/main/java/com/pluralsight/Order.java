@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Order {
 
-    private List<Sandwich> sandwiches = new ArrayList<>();
-    private List<Drink> drinks = new ArrayList<>();
-    private List<Chips> chips = new ArrayList<>();
+    private List<Sandwich> sandwiches;
+    private List<Drink> drinks;
+    private List<Chips> chips;
 
     public Order() {
         this.sandwiches = new ArrayList<>();
@@ -17,10 +17,6 @@ public class Order {
 
     public List<Sandwich> getSandwiches() {
         return sandwiches;
-    }
-
-    public void setSandwiches(List<Sandwich> sandwiches) {
-        this.sandwiches = sandwiches;
     }
 
     public void addSandwich(Sandwich sandwich) {

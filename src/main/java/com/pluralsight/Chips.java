@@ -12,15 +12,9 @@ public class Chips {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public double getPrice() {
 
-        double chipPrice = 1.50;
-
-        return chipPrice;
+        return 1.50;
 
     }
 

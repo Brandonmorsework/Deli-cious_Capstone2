@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Sandwich {
@@ -11,9 +12,9 @@ public class Sandwich {
     private boolean isToasted;
     private String breadType;
 
-    private ArrayList<Topping> toppings;
+    private List<Topping> toppings;
 
-    public Sandwich(int size, String breadType, boolean isToasted, boolean isExtraCheese, boolean isExtraMeat, ArrayList<Topping> toppings) {
+    public Sandwich(int size, String breadType, boolean isToasted, boolean isExtraCheese, boolean isExtraMeat, List<Topping> toppings) {
         this.size = size;
         this.isExtraCheese = isExtraCheese;
         this.isExtraMeat = isExtraMeat;
@@ -26,48 +27,24 @@ public class Sandwich {
         return size;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
     public boolean isExtraCheese() {
         return isExtraCheese;
-    }
-
-    public void setExtraCheese(boolean extraCheese) {
-        isExtraCheese = extraCheese;
     }
 
     public boolean isExtraMeat() {
         return isExtraMeat;
     }
 
-    public void setExtraMeat(boolean extraMeat) {
-        isExtraMeat = extraMeat;
-    }
-
     public boolean isToasted() {
         return isToasted;
-    }
-
-    public void setToasted(boolean toasted) {
-        isToasted = toasted;
     }
 
     public String getBreadType() {
         return breadType;
     }
 
-    public void setBreadType(String breadType) {
-        this.breadType = breadType;
-    }
-
-    public ArrayList<Topping> getToppings() {
+    public List<Topping> getToppings() {
         return toppings;
-    }
-
-    public void setToppings(ArrayList<Topping> toppings) {
-        this.toppings = toppings;
     }
 
     public double getPrice() {
@@ -111,7 +88,9 @@ public class Sandwich {
             finalPrice += addedExtraMeatTopping;
     }
 
-
+    for (Topping topping : toppings) {
+        finalPrice += topping.getPrice(size);
+    }
 
 
         return finalPrice;

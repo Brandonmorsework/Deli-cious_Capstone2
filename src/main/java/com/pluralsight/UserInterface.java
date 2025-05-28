@@ -735,8 +735,8 @@ public class UserInterface {
 
         }
 
-        OrderFileManager orderFileManager = new OrderFileManager();
-        orderFileManager.createReceiptFile();
+        /*OrderFileManager orderFileManager = new OrderFileManager();
+        orderFileManager.createReceiptFile();*/
 
     }
 

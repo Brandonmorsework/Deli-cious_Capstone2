@@ -12,10 +12,6 @@ public abstract class Topping {
         return toppingType;
     }
 
-    public void setToppingType(String toppingType) {
-        this.toppingType = toppingType;
-    }
-
    public abstract double getPrice(int size);
 
 }

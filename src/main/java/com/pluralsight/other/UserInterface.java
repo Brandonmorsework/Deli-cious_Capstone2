@@ -745,7 +745,7 @@ public class UserInterface {
 
             } else {
 
-                System.out.println(" ");
+                System.out.println("No Chips Added");
 
             }
 
@@ -769,7 +769,7 @@ public class UserInterface {
             }
 
             System.out.println(" ");
-            System.out.println(order.calculateTotal() + " is Your Total");
+            System.out.printf("Your Total: $%.2f%n", order.calculateTotal());
             System.out.println(" ");
             System.out.println("Confirm Order to Receive Receipt?  ( Y / N )");
 

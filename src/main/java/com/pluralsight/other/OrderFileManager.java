@@ -13,12 +13,12 @@ import java.time.format.DateTimeFormatter;
 public class OrderFileManager {
 
 
-
     public void createReceiptFile(Order order) {
 
         LocalDateTime getTimeNow = LocalDateTime.now();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
-        String newFileName = getTimeNow.format(dateTimeFormatter) + ".txt";
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+        String newFileName = "receipts" + "/" + getTimeNow.format(dateTimeFormatter) + ".txt";
+
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(newFileName))) {
 

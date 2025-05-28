@@ -100,20 +100,20 @@ public class UserInterface {
 
 
             System.out.println("Please Select a Sandwich Size:");
-            System.out.println(" 4 - 4 Inch Sandwich");
-            System.out.println(" 8 - 8 Inch Sandwich");
-            System.out.println("12 - 12 Inch Sandwich");
+            System.out.println("1 - 4 Inch Sandwich");
+            System.out.println("2 - 8 Inch Sandwich");
+            System.out.println("3 - 12 Inch Sandwich");
             System.out.println(" ");
 
             try {
                 userSandwichSize = scanner.nextInt();
                 scanner.nextLine();
 
-                if (userSandwichSize == 4 || userSandwichSize == 8 || userSandwichSize == 12) {
+                if (userSandwichSize == 1 || userSandwichSize == 2 || userSandwichSize == 3) {
                     availableBreadSize = true;
                 } else {
                     System.out.println(" ");
-                    System.out.println("Please Enter Either '4', '8' or '12' for the Bread Size");
+                    System.out.println("Please Enter Either '1', '2' or '3' for the Bread Size");
                     System.out.println(" ");
                     availableBreadSize = false;
                 }

@@ -17,7 +17,11 @@
 ## Setup
 
 1. Create the Sandwich, Chips and Drink classes to store information such as product sizes and prices
-2. Create the Topping Abstract class to be used by the 
+2. Create the Topping Abstract class to be overridden by the methods of the Meat, Cheese, Sauces and Regular Toppings derived classes.
+3. Create the UserInterface class which includes user options and while loops with try catches for handling user input.
+4. Create the OrderFileManager class that creates the receipts and stores the customer order information including total prices.
+5. Create the Order class that handles adding the lists together to calculate the total price for OrderFileManager.
+6. Create the MainProgram that runs the
 
 ### Prerequisites
 

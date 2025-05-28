@@ -433,6 +433,64 @@ public class UserInterface {
                 System.out.println("Please Enter a Valid Number for the Included Toppings Option!");
             }
         }
+        String userSauceChoice = "";
+
+        while (!userSauceChoice.equalsIgnoreCase("next")) {
+
+            System.out.println("Please Add Your Sauces by Entering the Appropriate Number. Type 'next' When You Are Finished Adding Them");
+            System.out.println("Included Toppings:");
+            System.out.println("1 - Ketchup");
+            System.out.println("2 - Mayo");
+            System.out.println("3 - Mustard");
+            System.out.println("4 - Ranch");
+            System.out.println("5 - Thousand-Islands");
+            System.out.println("6 - Vinaigrette");
+
+
+            try {
+
+                userSauceChoice = scanner.nextLine();
+
+                switch (userSauceChoice) {
+
+                    case "1":
+                        toppingList.add(new Sauce("Ketchup"));
+                        System.out.println("Added Ketchup!");
+                        System.out.println(" ");
+                        break;
+                    case "2":
+                        toppingList.add(new Sauce("Mayo"));
+                        System.out.println("Added Mayo!");
+                        System.out.println(" ");
+                        break;
+                    case "3":
+                        toppingList.add(new Sauce("Mustard"));
+                        System.out.println("Added Mustard!");
+                        System.out.println(" ");
+                        break;
+                    case "4":
+                        toppingList.add(new Sauce("Ranch"));
+                        System.out.println("Added Ranch");
+                        System.out.println(" ");
+                        break;
+                    case "5":
+                        toppingList.add(new Sauce("Thousand-Islands"));
+                        System.out.println("Added Thousand-Islands!");
+                        System.out.println(" ");
+                        break;
+                    case "6":
+                        toppingList.add(new Sauce("Vinaigrette"));
+                        System.out.println("Added Vinaigrette!");
+                        System.out.println(" ");
+                    case "next":
+                        break;
+                }
+
+
+            } catch (Exception e) {
+                System.out.println("Please Enter a Valid Number for the Sauces Option!");
+            }
+        }
 
         Sandwich sandwich = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat, toppingList);
         order.addSandwich(sandwich);

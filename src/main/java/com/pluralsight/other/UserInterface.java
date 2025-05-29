@@ -536,17 +536,20 @@ public class UserInterface {
             case "1":
 
                 signatureSandwich = new BLT();
+                customizeSignatureSandwichScreen();
                 break;
 
             case "2":
                 signatureSandwich = new ClubSandwich();
+                customizeSignatureSandwichScreen();
                 break;
 
             case "3":
                 signatureSandwich = new Vegeterian();
+                customizeSignatureSandwichScreen();
                break;
 
-            case "4":
+            case "0":
                 displayOrderScreen();
 
 
@@ -556,17 +559,77 @@ public class UserInterface {
 
     }
 
-    public void customizeSignatureSandwich() {
+    public void customizeSignatureSandwichScreen() {
 
         String userOption = "";
 
-        System.out.println(" Would you Like to Customize This Sandwich?");
+        System.out.println("Would you Like to Customize This Sandwich?  ( Y / N )");
 
-        switch (userOption) {
+        userOption = scanner.nextLine();
 
-            case "yes":
+        String customizeOption = "";
+
+        if (userOption.equalsIgnoreCase("yes") || userOption.equalsIgnoreCase("y")) {
+
+            while (!userOption.equalsIgnoreCase("next")) {
+
+                System.out.println("Signature Sandwich Customization");
+                System.out.println("Please Choose What you Want to Customize:");
+                System.out.println(" ");
+                System.out.println("1 - Add Toppings");
+                System.out.println("2 - Remove Toppings");
+                System.out.println("3 - Change Toasted Status");
+                System.out.println("4 - Change Extra Meat Status");
+                System.out.println("5 - Change Extra Cheese Status");
+                System.out.println("6 - Change Size");
+                System.out.println("7 - Change Bread Type");
+
+                try {
+
+
+                    customizeOption = scanner.nextLine();
+
+                    switch (customizeOption) {
+
+                        case "1":
+
+                            break;
+                        case "2":
+
+                            break;
+                        case "3":
+
+                            break;
+                        case "4":
+
+                            break;
+                        case "5":
+
+                            break;
+                        case "6":
+
+                            break;
+                        case "7":
+
+                            break;
+                    }
+
+
+
+
+                } catch (Exception e) {
+
+                    System.out.println("Invalid Option...");
+
+                }
+
+
+            }
 
         }
+
+// ADD THE CUSTOMIZED/NON-CUSTOMIZED SANDWICH TO THE ORDER
+        /*order.addSandwich();*/
 
     }
 

@@ -1,0 +1,22 @@
+Thank you for Choosing Deli-cious Deli!
+Here is Your Order Summary:
+ 
+=== Sandwiches ===
+
+ Sandwich 1
+ Toasted 12 Inch White Bread
+ -     Bacon
+ -     Cheddar
+ -     Lettuce
+ -     Tomato
+ -     Ranch
+Extra Cheese: No
+Extra Meat: No
+
+=== Drinks ===
+
+
+=== Chips ===
+
+
+Total: $13.75

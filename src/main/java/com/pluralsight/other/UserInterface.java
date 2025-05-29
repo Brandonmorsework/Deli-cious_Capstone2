@@ -66,28 +66,37 @@ public class UserInterface {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-            switch (choice) {
-                case 1:
-                    addSandwich();
-                    break;
-                case 2:
-                    addSignatureSandwich();
-                    break;
-                case 3:
-                    addDrink();
-                    break;
-                case 4:
-                    addChips();
-                    break;
-                case 5:
-                    checkOut();
-                    break;
-                case 0:
-                    System.out.println(" ");
-                    System.out.println("Canceling Order...");
-                    System.out.println();
-                    clearOrder();
-                    quit = true;
+            try {
+                switch (choice) {
+                    case 1:
+                        addSandwich();
+                        break;
+                    case 2:
+                        addSignatureSandwich();
+                        break;
+                    case 3:
+                        addDrink();
+                        break;
+                    case 4:
+                        addChips();
+                        break;
+                    case 5:
+                        checkOut();
+                        break;
+                    case 0:
+                        System.out.println(" ");
+                        System.out.println("Canceling Order...");
+                        System.out.println();
+                        clearOrder();
+                        quit = true;
+                    default:
+                        System.out.println("Please Enter a Number Between 0-5!");
+
+                }
+
+            } catch (Exception e) {
+
+                System.out.println("Invalid Entry! Please Enter a Number Between 0-5!");
 
             }
         }
@@ -571,6 +580,9 @@ public class UserInterface {
 
             while (!customizeOption.equalsIgnoreCase("next")) {
 
+                System.out.println(" ");
+                System.out.println(signatureSandwich);
+
                 System.out.println("Signature Sandwich Customization");
                 System.out.println("Please Choose What you Want to Customize. Type 'next' When Finished Customizing:");
                 System.out.println(" ");
@@ -607,12 +619,12 @@ public class UserInterface {
                             if (userToastedOption.equalsIgnoreCase("yes") || userToastedOption.equalsIgnoreCase("y")) {
 
                                 signatureSandwich.setToasted(true);
-                                System.out.println("Your " + signatureSandwich + " Bread Will be Toasted!");
+                                System.out.println("Your Bread Will be Toasted!");
 
                             } else {
 
                                 signatureSandwich.setToasted(false);
-                                System.out.println("Your " + signatureSandwich + " Bread Will stay Un-Toasted...");
+                                System.out.println("Your Bread Will stay Un-Toasted...");
                             }
                             break;
 
@@ -634,7 +646,6 @@ public class UserInterface {
                             break;
 
                         case "5":
-
 
                             System.out.println("Do you want to Add Extra Cheese to This Sandwich?  ( Y / N )");
 
@@ -670,10 +681,11 @@ public class UserInterface {
                                     break;
                                 case "2":
                                     signatureSandwich.setSize(8);
-                                    System.out.println("Changed Bread Size to ");
+                                    System.out.println("Changed Bread Size to 8-Inch!");
                                     break;
                                 case  "3":
                                     signatureSandwich.setSize(12);
+                                    System.out.println("Changed Bread Size to 12 Inch!");
                                     break;
                                 default:
                                     System.out.println("Please Enter Either '1', '2' or '3' for the Bread Size");
@@ -739,7 +751,8 @@ public class UserInterface {
         }
 
 // ADD THE CUSTOMIZED/NON-CUSTOMIZED SANDWICH TO THE ORDER
-        /*order.addSandwich();*/
+        order.addSandwich(signatureSandwich);
+        System.out.println("Added Signature Sandwich to Order!");
 
     }
 

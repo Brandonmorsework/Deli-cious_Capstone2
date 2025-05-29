@@ -113,14 +113,24 @@ public class UserInterface {
                 userSandwichSize = scanner.nextInt();
                 scanner.nextLine();
 
-                if (userSandwichSize == 4 || userSandwichSize == 8 || userSandwichSize == 12) {
-                    availableBreadSize = true;
-                } else {
-                    System.out.println(" ");
-                    System.out.println("Please Enter Either '1', '2' or '3' for the Bread Size");
-                    System.out.println(" ");
-                    availableBreadSize = false;
+                switch (userSandwichSize) {
+                    case 1:
+                        userSandwichSize = 4;
+                        availableBreadSize = true;
+                        break;
+                    case 2:
+                        userSandwichSize = 8;
+                        availableBreadSize = true;
+                        break;
+                    case 3:
+                        userSandwichSize = 12;
+                        availableBreadSize = true;
+                        break;
+                    default:
+                        System.out.println("Invalid Response, Please Enter Either 1, 2, or 3!");
+
                 }
+
 
             } catch (Exception e) {
                 System.out.println(" ");

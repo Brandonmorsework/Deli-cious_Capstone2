@@ -50,10 +50,6 @@ public class Sandwich {
         this.breadType = breadType;
     }
 
-    public void setToppings(List<Topping> toppings) {
-        this.toppings = toppings;
-    }
-
     public boolean isExtraMeat() {
         return isExtraMeat;
     }
@@ -68,6 +64,17 @@ public class Sandwich {
 
     public List<Topping> getToppings() {
         return toppings;
+    }
+
+    public void addTopping(Topping topping) {
+
+        toppings.add(topping);
+    }
+
+    public void removeTopping(Topping topping) {
+
+        toppings.remove(topping);
+
     }
 
     public double getPrice() {

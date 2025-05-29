@@ -554,7 +554,7 @@ public class UserInterface {
                 break;
 
             case "3":
-                signatureSandwich = new Vegeterian();
+                signatureSandwich = new Vegetarian();
                 customizeSignatureSandwichScreen(signatureSandwich);
                break;
 
@@ -602,12 +602,129 @@ public class UserInterface {
                     switch (customizeOption) {
 
                         case "1":
+
+                            String userToppingChoice;
+
                             System.out.println("Which Toppings Would You Like to Add?");
+                            System.out.println(" ");
+                            System.out.println("1 - Lettuce");
+                            System.out.println("2 - Peppers");
+                            System.out.println("3 - Onions");
+                            System.out.println("4 - Tomatoes");
+                            System.out.println("5 - Jalapenos");
+                            System.out.println("6 - Cucumbers");
+                            System.out.println("7 - Pickles");
+                            System.out.println("8 - Guacamole");
+                            System.out.println("9 - Mushrooms");
+
+                            userToppingChoice = scanner.nextLine();
+
+                            switch (userToppingChoice) {
+
+                                case "1":
+                                    signatureSandwich.addTopping(new RegularToppings("Lettuce"));
+                                    System.out.println("Added Lettuce!");
+                                    break;
+                                case "2":
+                                    signatureSandwich.addTopping((new RegularToppings("Peppers")));
+                                    System.out.println("Added Peppers!");
+                                    break;
+                                case "3":
+                                    signatureSandwich.addTopping((new RegularToppings("Onions")));
+                                    System.out.println("Added Onions!");
+                                    break;
+                                case "4":
+                                    signatureSandwich.addTopping((new RegularToppings("Tomatoes")));
+                                    System.out.println("Added Tomatoes!");
+                                    break;
+                                case "5":
+                                    signatureSandwich.addTopping((new RegularToppings("Jalapenos")));
+                                    System.out.println("Added Jalapenos!");
+                                    break;
+                                case "6":
+                                    signatureSandwich.addTopping((new RegularToppings("Cucumbers")));
+                                    System.out.println("Added Cucumbers!");
+                                    break;
+                                case "7":
+                                    signatureSandwich.addTopping((new RegularToppings("Pickles")));
+                                    System.out.println("Added Pickles!");
+                                    break;
+                                case "8":
+                                    signatureSandwich.addTopping((new RegularToppings("Guacamole")));
+                                    System.out.println("Added Guacamole!");
+                                    break;
+                                case "9":
+                                    signatureSandwich.addTopping((new RegularToppings("Mushrooms")));
+                                    System.out.println("Added Mushrooms!");
+                                    break;
+                                default:
+                                    System.out.println("Invalid Options. Please Enter a Number between 1-9");
+                            }
 
                             break;
 
                         case "2":
+
                             System.out.println("Which Toppings Would You Like to Remove?");
+
+                            String userToppingRemoval;
+
+                            System.out.println("Which Toppings Would You Like to Add?");
+                            System.out.println(" ");
+                            System.out.println("1 - Lettuce");
+                            System.out.println("2 - Peppers");
+                            System.out.println("3 - Onions");
+                            System.out.println("4 - Tomatoes");
+                            System.out.println("5 - Jalapenos");
+                            System.out.println("6 - Cucumbers");
+                            System.out.println("7 - Pickles");
+                            System.out.println("8 - Guacamole");
+                            System.out.println("9 - Mushrooms");
+
+                            userToppingRemoval = scanner.nextLine();
+
+                            switch (userToppingRemoval) {
+
+                                case "1":
+                                    signatureSandwich.removeTopping(new RegularToppings("Lettuce"));
+                                    System.out.println("Removed Lettuce!");
+                                    break;
+                                case "2":
+                                    signatureSandwich.removeTopping((new RegularToppings("Peppers")));
+                                    System.out.println("Removed Peppers!");
+                                    break;
+                                case "3":
+                                    signatureSandwich.removeTopping((new RegularToppings("Onions")));
+                                    System.out.println("Removed Onions!");
+                                    break;
+                                case "4":
+                                    signatureSandwich.removeTopping((new RegularToppings("Tomatoes")));
+                                    System.out.println("Removed Tomatoes!");
+                                    break;
+                                case "5":
+                                    signatureSandwich.removeTopping((new RegularToppings("Jalapenos")));
+                                    System.out.println("Removed Jalapenos!");
+                                    break;
+                                case "6":
+                                    signatureSandwich.removeTopping((new RegularToppings("Cucumbers")));
+                                    System.out.println("Removed Cucumbers!");
+                                    break;
+                                case "7":
+                                    signatureSandwich.removeTopping((new RegularToppings("Pickles")));
+                                    System.out.println("Removed Pickles!");
+                                    break;
+                                case "8":
+                                    signatureSandwich.removeTopping((new RegularToppings("Guacamole")));
+                                    System.out.println("Removed Guacamole!");
+                                    break;
+                                case "9":
+                                    signatureSandwich.removeTopping((new RegularToppings("Mushrooms")));
+                                    System.out.println("Removed Mushrooms!");
+                                    break;
+                                default:
+                                    System.out.println("Please Enter a Number Between 1-9!");
+                            }
+
                             break;
 
                         case "3":
@@ -673,6 +790,7 @@ public class UserInterface {
 
                             userSizeOption = scanner.nextLine();
 
+//NESTED SWITCH STATEMENT TO HANDLE CHANGING BREAD TYPE AND BREAD SIZE
                             switch (userSizeOption) {
 
                                 case "1":
@@ -706,7 +824,6 @@ public class UserInterface {
 
                             userBreadTypeOption = scanner.nextLine();
 
-//NESTED SWITCH STATEMENT TO HANDLE CHANGING BREAD TYPE
                             switch (userBreadTypeOption) {
 
                                 case "1":
@@ -736,15 +853,11 @@ public class UserInterface {
 
                     }
 
-
-
-
                 } catch (Exception e) {
 
                     System.out.println("Invalid Option...");
 
                 }
-
 
             }
 

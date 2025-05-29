@@ -24,6 +24,7 @@ public class OrderFileManager {
 
 
             for (Sandwich sandwich : order.getSandwiches()) {
+                bw.write("Sandwich 1");
                 bw.write(sandwich.toString());
                 bw.newLine();
 
@@ -52,7 +53,10 @@ public class OrderFileManager {
 
         }
 
-        System.out.println("Receipt Successfully Added!");
+        order.getSandwiches().clear();
+        order.getDrinks().clear();
+        order.getChips().clear();
+
 
     }
 

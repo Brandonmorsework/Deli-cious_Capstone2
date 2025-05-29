@@ -28,14 +28,13 @@ public class UserInterface {
             System.out.println(" ");
             System.out.println("Enter your Choice:");
             System.out.println(" ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            String choice = scanner.nextLine();
 
             switch (choice) {
-                case 1:
+                case "1":
                     displayOrderScreen();
                     break;
-                case 0:
+                case "0":
                     quit = true;
 
             }
@@ -78,6 +77,10 @@ public class UserInterface {
                     checkOut();
                     break;
                 case 0:
+                    System.out.println(" ");
+                    System.out.println("Canceling Order...");
+                    System.out.println();
+                    clearOrder();
                     quit = true;
 
             }
@@ -742,7 +745,6 @@ public class UserInterface {
 
                 }
 
-
             } else {
 
                 System.out.println("No Chips Added");
@@ -773,8 +775,6 @@ public class UserInterface {
             System.out.println(" ");
             System.out.println("Confirm Order to Receive Receipt?  ( Y / N )");
 
-
-
             String userYesOrNo = scanner.nextLine();
 
 
@@ -782,35 +782,40 @@ public class UserInterface {
 
                 System.out.println("Thank you for Using the Deli! Come Again!");
 
-            } else {
+                if (!sandwiches.isEmpty() || !drinks.isEmpty() || !chip.isEmpty()) {
+                    OrderFileManager orderFileManager = new OrderFileManager();
+                    orderFileManager.createReceiptFile(order);
+                    System.out.println("Receipt Successfully Added!");
+                }
 
+            } else {
+                System.out.println(" ");
                 System.out.println("Returning Home...");
+                System.out.println(" ");
 
             }
 
         } else {
 
             System.out.println("Nothing Added to Order...");
+
             System.out.println("Returning Home...");
+            System.out.println(" ");
+
 
         }
 
-        OrderFileManager orderFileManager = new OrderFileManager();
-        orderFileManager.createReceiptFile(order);
+
 
     }
 
-
-
     //THIS METHOD WILL CLEAR ALL USER ENTRIES AND RETURN THE USER TO THE HOME MENU
 
-    public void goHome() {
+    public void clearOrder() {
 
+            order.getSandwiches().clear();
+            order.getDrinks().clear();
+            order.getChips().clear();
 
         }
-
-
-
-
-
 }

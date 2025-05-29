@@ -519,8 +519,8 @@ public class UserInterface {
 
     public void addSignatureSandwich() {
 
-        String userOption = "";
-        SignatureSandwiches signatureSandwich = null;
+        String userOption;
+        SignatureSandwiches signatureSandwich;
 
         System.out.println("====== Signature Sandwiches ======= ");
         System.out.println(" ");
@@ -529,52 +529,50 @@ public class UserInterface {
         System.out.println("3 - Vegetarian's Paradise Sandwich");
         System.out.println("0 - Back to Main Menu");
 
-
+        userOption = scanner.nextLine();
 
         switch (userOption) {
 
             case "1":
 
                 signatureSandwich = new BLT();
-                customizeSignatureSandwichScreen();
+                customizeSignatureSandwichScreen(signatureSandwich);
                 break;
 
             case "2":
                 signatureSandwich = new ClubSandwich();
-                customizeSignatureSandwichScreen();
+                customizeSignatureSandwichScreen(signatureSandwich);
                 break;
 
             case "3":
                 signatureSandwich = new Vegeterian();
-                customizeSignatureSandwichScreen();
+                customizeSignatureSandwichScreen(signatureSandwich);
                break;
 
             case "0":
                 displayOrderScreen();
-
-
 
         }
 
 
     }
 
-    public void customizeSignatureSandwichScreen() {
+    public void customizeSignatureSandwichScreen(SignatureSandwiches signatureSandwich) {
 
-        String userOption = "";
+        String userOption;
 
         System.out.println("Would you Like to Customize This Sandwich?  ( Y / N )");
 
         userOption = scanner.nextLine();
 
-        String customizeOption = "";
+        String customizeOption;
 
         if (userOption.equalsIgnoreCase("yes") || userOption.equalsIgnoreCase("y")) {
 
             while (!userOption.equalsIgnoreCase("next")) {
 
                 System.out.println("Signature Sandwich Customization");
-                System.out.println("Please Choose What you Want to Customize:");
+                System.out.println("Please Choose What you Want to Customize. Type 'next' When Finished Customizing:");
                 System.out.println(" ");
                 System.out.println("1 - Add Toppings");
                 System.out.println("2 - Remove Toppings");
@@ -592,26 +590,41 @@ public class UserInterface {
                     switch (customizeOption) {
 
                         case "1":
+                            System.out.println("Which Toppings Would You Like to Add?");
 
                             break;
                         case "2":
 
                             break;
                         case "3":
+                            System.out.println("Do you Want This Sandwich Toasted?");
 
                             break;
                         case "4":
+                            String userExtraMeatOption = "";
+                            userExtraMeatOption = scanner.nextLine();
+
+
+                            System.out.println("Do you want to Add Extra Meat to This Sandwich?  ( Y / N )");
+                            if (userExtraMeatOption.equalsIgnoreCase("yes") || userExtraMeatOption.equalsIgnoreCase("y")) {
+
+                            }
+                            signatureSandwich.setExtraMeat(false);
 
                             break;
                         case "5":
+                            System.out.println("Do you Want to Add Extra Cheese to This Sandwich?");
 
                             break;
                         case "6":
-
+                            System.out.println("What Size Sandwich of this " + signatureSandwich + " do you Want?" );
                             break;
                         case "7":
-
+                            System.out.println("What Type of Bread do you Want?");
                             break;
+                        default:
+                            System.out.println("Please Enter a Number Between 1-7!");
+
                     }
 
 

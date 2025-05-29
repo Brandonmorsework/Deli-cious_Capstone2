@@ -30,6 +30,30 @@ public class Sandwich {
         return isExtraCheese;
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setExtraCheese(boolean extraCheese) {
+        isExtraCheese = extraCheese;
+    }
+
+    public void setExtraMeat(boolean extraMeat) {
+        isExtraMeat = extraMeat;
+    }
+
+    public void setToasted(boolean toasted) {
+        isToasted = toasted;
+    }
+
+    public void setBreadType(String breadType) {
+        this.breadType = breadType;
+    }
+
+    public void setToppings(List<Topping> toppings) {
+        this.toppings = toppings;
+    }
+
     public boolean isExtraMeat() {
         return isExtraMeat;
     }

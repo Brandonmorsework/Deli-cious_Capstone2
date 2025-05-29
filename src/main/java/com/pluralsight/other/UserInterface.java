@@ -16,6 +16,7 @@ public class UserInterface {
         scanner = new Scanner(System.in);
     }
 
+    //HOME SCREEN DISPLAY WITH A SHORT SWITCH CASE
     public void displayHomeScreen() {
 
         boolean quit = false;
@@ -43,6 +44,7 @@ public class UserInterface {
 
     }
 
+    //ORDER SCREEN THAT HANDLES USER OPTIONS THROUGH INT INPUTS
     public void displayOrderScreen() {
 
         order = new Order();
@@ -88,7 +90,6 @@ public class UserInterface {
     }
 
     // ADDING A SANDWICH TO THE UNCONFIRMED ORDER
-
     public void addSandwich() {
 
         ArrayList<Topping> toppingList = new ArrayList<>();
@@ -316,7 +317,7 @@ public class UserInterface {
             }
         }
 
-        // ONLY ASK THE USER IF THEY WANT EXTRA CHEESE OR EXTRA MEAT IF THEY ADDED IT TO THEIR SANDWICH BEFORE
+        // ASK THE USER IF THEY WANT EXTRA CHEESE OR EXTRA MEAT ONLY IF THEY ADDED IT TO THEIR SANDWICH BEFOREHAND
 
         if (hasCheese) {
             System.out.println("Do you Want Extra Cheese? ( Y / N )");
@@ -359,7 +360,7 @@ public class UserInterface {
             isExtraMeat = false;
 
         }
-
+//LOOP THE INCLUDED TOPPINGS DISPLAY UNTIL THE USER TYPES 'NEXT'
         String userToppingChoice = "";
 
         while (!userToppingChoice.equalsIgnoreCase("next")) {
@@ -780,6 +781,7 @@ public class UserInterface {
 
             if (userYesOrNo.equalsIgnoreCase("y") || userYesOrNo.equalsIgnoreCase("yes")) {
 
+//ONLY PROCESS THE USER'S ORDER IF EITHER OF THE LISTS CONTAIN ENTRIES, OTHERWISE TAKE THEM BACK TO THE HOME SCREEN
                 System.out.println("Thank you for Using the Deli! Come Again!");
 
                 if (!sandwiches.isEmpty() || !drinks.isEmpty() || !chip.isEmpty()) {
@@ -798,19 +800,13 @@ public class UserInterface {
         } else {
 
             System.out.println("Nothing Added to Order...");
-
             System.out.println("Returning Home...");
             System.out.println(" ");
 
-
         }
-
-
-
     }
 
-    //THIS METHOD WILL CLEAR ALL USER ENTRIES AND RETURN THE USER TO THE HOME MENU
-
+    //THIS METHOD WILL CLEAR ALL USER ENTRIES
     public void clearOrder() {
 
             order.getSandwiches().clear();

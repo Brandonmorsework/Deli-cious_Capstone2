@@ -6,6 +6,7 @@ public class RegularToppings extends Topping {
         super(toppingType);
     }
 
+    //REGARDLESS OF SIZE, TOPPINGS ARE INCLUDED FREE OF CHARGE
     @Override
     public double getPrice(int size) {
         return 0.0;

@@ -15,6 +15,7 @@ public class OrderFileManager {
 
     public void createReceiptFile(Order order) {
 
+// USE LOCALDATE AND LOCALDATETIMEFORMATTER TO CREATE RECEIPTS WITH NAMES BASED ON THE DATE AND TIME THEY WERE CREATED
         LocalDateTime getTimeNow = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
         String newFileName = "receipts" + "/" + getTimeNow.format(dateTimeFormatter) + ".txt";
@@ -31,6 +32,7 @@ public class OrderFileManager {
             bw.newLine();
             bw.write(" ");
 
+//ITERATE WITH EACH SANDWICH ADDED WITH 'SANDWICHCOUNT' AS AN INT IN ORDER PROPERLY DISPLAY 'SANDWICH 1', 'SANDWICH 2', 'SANDWICH 3', ETC.
             int sandwichCount = 1;
             for (Sandwich sandwich : order.getSandwiches()) {
                 bw.write("Sandwich " + sandwichCount + "\n");
@@ -67,6 +69,7 @@ public class OrderFileManager {
 
         }
 
+//CLEAR THE USER'S ORDER AFTER CREATING THE RECEIPT
         order.getSandwiches().clear();
         order.getDrinks().clear();
         order.getChips().clear();

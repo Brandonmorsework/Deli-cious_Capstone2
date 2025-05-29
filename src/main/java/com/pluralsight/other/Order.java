@@ -43,6 +43,7 @@ public class Order {
         this.chips.add(chips);
     }
 
+// CALCULATE THE TOTAL COST OF THE SANDWICHES, CHIPS AND DRINKS BY ITERATING WITH +=
     public double calculateTotal() {
         double totalPrice = 0.0;
 

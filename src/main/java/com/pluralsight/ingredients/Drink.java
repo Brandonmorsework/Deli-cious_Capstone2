@@ -18,6 +18,7 @@ public class Drink {
         return flavor;
     }
 
+//HANDLING DRINK PRICING BASED ON SIZE
     public double getPrice(String size) {
 
         double finalDrinkPrice = 0.0;
@@ -39,6 +40,7 @@ public class Drink {
         return finalDrinkPrice;
     }
 
+//RECEIPT OUTPUT FOR DRINKS
     @Override
     public String toString() {
         return size + " " + flavor;

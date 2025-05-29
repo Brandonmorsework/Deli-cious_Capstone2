@@ -6,6 +6,7 @@ public class Meat extends Topping {
         super(toppingType);
     }
 
+    // THE SIZE OF THE SANDWICH WILL DETERMINE HOW MUCH EACH MEAT ADDED WILL COST
     @Override
     public double getPrice(int size) {
 

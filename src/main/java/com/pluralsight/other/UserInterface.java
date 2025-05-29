@@ -76,7 +76,6 @@ public class UserInterface {
                 case 3:
                     addDrink();
                     break;
-
                 case 4:
                     addChips();
                     break;
@@ -520,11 +519,54 @@ public class UserInterface {
 
     public void addSignatureSandwich() {
 
+        String userOption = "";
+        SignatureSandwiches signatureSandwich = null;
+
         System.out.println("====== Signature Sandwiches ======= ");
+        System.out.println(" ");
         System.out.println("1 - Brandon's BLT Sandwich");
         System.out.println("2 - Carmen's Club Sandwich");
         System.out.println("3 - Vegetarian's Paradise Sandwich");
+        System.out.println("0 - Back to Main Menu");
 
+
+
+        switch (userOption) {
+
+            case "1":
+
+                signatureSandwich = new BLT();
+                break;
+
+            case "2":
+                signatureSandwich = new ClubSandwich();
+                break;
+
+            case "3":
+                signatureSandwich = new Vegeterian();
+               break;
+
+            case "4":
+                displayOrderScreen();
+
+
+
+        }
+
+
+    }
+
+    public void customizeSignatureSandwich() {
+
+        String userOption = "";
+
+        System.out.println(" Would you Like to Customize This Sandwich?");
+
+        switch (userOption) {
+
+            case "yes":
+
+        }
 
     }
 

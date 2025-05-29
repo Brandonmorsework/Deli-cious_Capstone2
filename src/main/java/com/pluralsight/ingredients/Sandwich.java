@@ -71,12 +71,6 @@ public class Sandwich {
         toppings.add(topping);
     }
 
-    public void removeTopping(Topping topping) {
-
-        toppings.remove(topping);
-
-    }
-
     public double getPrice() {
 
         double finalPrice;

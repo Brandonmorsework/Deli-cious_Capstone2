@@ -587,12 +587,11 @@ public class UserInterface {
                 System.out.println("Please Choose What you Want to Customize. Type 'next' When Finished Customizing:");
                 System.out.println(" ");
                 System.out.println("1 - Add Toppings");
-                System.out.println("2 - Remove Toppings");
-                System.out.println("3 - Change Toasted Status");
-                System.out.println("4 - Change Extra Meat Status");
-                System.out.println("5 - Change Extra Cheese Status");
-                System.out.println("6 - Change Size");
-                System.out.println("7 - Change Bread Type");
+                System.out.println("2 - Change Toasted Status");
+                System.out.println("3 - Change Extra Meat Status");
+                System.out.println("4 - Change Extra Cheese Status");
+                System.out.println("5 - Change Size");
+                System.out.println("6 - Change Bread Type");
 
                 try {
 
@@ -626,35 +625,35 @@ public class UserInterface {
                                     System.out.println("Added Lettuce!");
                                     break;
                                 case "2":
-                                    signatureSandwich.addTopping((new RegularToppings("Peppers")));
+                                    signatureSandwich.addTopping(new RegularToppings("Peppers"));
                                     System.out.println("Added Peppers!");
                                     break;
                                 case "3":
-                                    signatureSandwich.addTopping((new RegularToppings("Onions")));
+                                    signatureSandwich.addTopping(new RegularToppings("Onions"));
                                     System.out.println("Added Onions!");
                                     break;
                                 case "4":
-                                    signatureSandwich.addTopping((new RegularToppings("Tomatoes")));
+                                    signatureSandwich.addTopping(new RegularToppings("Tomatoes"));
                                     System.out.println("Added Tomatoes!");
                                     break;
                                 case "5":
-                                    signatureSandwich.addTopping((new RegularToppings("Jalapenos")));
+                                    signatureSandwich.addTopping(new RegularToppings("Jalapenos"));
                                     System.out.println("Added Jalapenos!");
                                     break;
                                 case "6":
-                                    signatureSandwich.addTopping((new RegularToppings("Cucumbers")));
+                                    signatureSandwich.addTopping(new RegularToppings("Cucumbers"));
                                     System.out.println("Added Cucumbers!");
                                     break;
                                 case "7":
-                                    signatureSandwich.addTopping((new RegularToppings("Pickles")));
+                                    signatureSandwich.addTopping(new RegularToppings("Pickles"));
                                     System.out.println("Added Pickles!");
                                     break;
                                 case "8":
-                                    signatureSandwich.addTopping((new RegularToppings("Guacamole")));
+                                    signatureSandwich.addTopping(new RegularToppings("Guacamole"));
                                     System.out.println("Added Guacamole!");
                                     break;
                                 case "9":
-                                    signatureSandwich.addTopping((new RegularToppings("Mushrooms")));
+                                    signatureSandwich.addTopping(new RegularToppings("Mushrooms"));
                                     System.out.println("Added Mushrooms!");
                                     break;
                                 default:
@@ -664,70 +663,6 @@ public class UserInterface {
                             break;
 
                         case "2":
-
-                            System.out.println("Which Toppings Would You Like to Remove?");
-
-                            String userToppingRemoval;
-
-                            System.out.println("Which Toppings Would You Like to Add?");
-                            System.out.println(" ");
-                            System.out.println("1 - Lettuce");
-                            System.out.println("2 - Peppers");
-                            System.out.println("3 - Onions");
-                            System.out.println("4 - Tomatoes");
-                            System.out.println("5 - Jalapenos");
-                            System.out.println("6 - Cucumbers");
-                            System.out.println("7 - Pickles");
-                            System.out.println("8 - Guacamole");
-                            System.out.println("9 - Mushrooms");
-
-                            userToppingRemoval = scanner.nextLine();
-
-                            switch (userToppingRemoval) {
-
-                                case "1":
-                                    signatureSandwich.removeTopping(new RegularToppings("Lettuce"));
-                                    System.out.println("Removed Lettuce!");
-                                    break;
-                                case "2":
-                                    signatureSandwich.removeTopping((new RegularToppings("Peppers")));
-                                    System.out.println("Removed Peppers!");
-                                    break;
-                                case "3":
-                                    signatureSandwich.removeTopping((new RegularToppings("Onions")));
-                                    System.out.println("Removed Onions!");
-                                    break;
-                                case "4":
-                                    signatureSandwich.removeTopping((new RegularToppings("Tomatoes")));
-                                    System.out.println("Removed Tomatoes!");
-                                    break;
-                                case "5":
-                                    signatureSandwich.removeTopping((new RegularToppings("Jalapenos")));
-                                    System.out.println("Removed Jalapenos!");
-                                    break;
-                                case "6":
-                                    signatureSandwich.removeTopping((new RegularToppings("Cucumbers")));
-                                    System.out.println("Removed Cucumbers!");
-                                    break;
-                                case "7":
-                                    signatureSandwich.removeTopping((new RegularToppings("Pickles")));
-                                    System.out.println("Removed Pickles!");
-                                    break;
-                                case "8":
-                                    signatureSandwich.removeTopping((new RegularToppings("Guacamole")));
-                                    System.out.println("Removed Guacamole!");
-                                    break;
-                                case "9":
-                                    signatureSandwich.removeTopping((new RegularToppings("Mushrooms")));
-                                    System.out.println("Removed Mushrooms!");
-                                    break;
-                                default:
-                                    System.out.println("Please Enter a Number Between 1-9!");
-                            }
-
-                            break;
-
-                        case "3":
                             System.out.println("Do you Want This Sandwich Toasted?  ( Y / N )");
 
                             String userToastedOption;
@@ -745,7 +680,7 @@ public class UserInterface {
                             }
                             break;
 
-                        case "4":
+                        case "3":
 
                             System.out.println("Do you want to Add Extra Meat to This Sandwich?  ( Y / N )");
 
@@ -762,7 +697,7 @@ public class UserInterface {
 
                             break;
 
-                        case "5":
+                        case "4":
 
                             System.out.println("Do you want to Add Extra Cheese to This Sandwich?  ( Y / N )");
 
@@ -779,7 +714,7 @@ public class UserInterface {
 
                             break;
 
-                        case "6":
+                        case "5":
 
                             String userSizeOption;
 
@@ -811,7 +746,7 @@ public class UserInterface {
 
                             break;
 
-                        case "7":
+                        case "6":
 
                             System.out.println("What Type of Bread do you Want?");
 
@@ -849,7 +784,7 @@ public class UserInterface {
                             break;
 
                         default:
-                            System.out.println("Please Enter a Number Between 1-7!");
+                            System.out.println("Please Enter a Number Between 1-6!");
 
                     }
 
@@ -1119,8 +1054,6 @@ public class UserInterface {
 
             }
 
-
-
             System.out.println(" ");
 
             if (!drinks.isEmpty()) {
@@ -1144,7 +1077,6 @@ public class UserInterface {
             System.out.println("Confirm Order to Receive Receipt?  ( Y / N )");
 
             String userYesOrNo = scanner.nextLine();
-
 
             if (userYesOrNo.equalsIgnoreCase("y") || userYesOrNo.equalsIgnoreCase("yes")) {
 

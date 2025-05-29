@@ -593,35 +593,122 @@ public class UserInterface {
                             System.out.println("Which Toppings Would You Like to Add?");
 
                             break;
+
                         case "2":
-
+                            System.out.println("Which Toppings Would You Like to Remove?");
                             break;
+
                         case "3":
-                            System.out.println("Do you Want This Sandwich Toasted?");
+                            System.out.println("Do you Want This Sandwich Toasted?  ( Y / N )");
 
+                            String userToastedOption;
+                            userToastedOption = scanner.nextLine();
+
+                            if (userToastedOption.equalsIgnoreCase("yes") || userToastedOption.equalsIgnoreCase("y")) {
+
+                                signatureSandwich.setToasted(true);
+                                System.out.println("Your " + signatureSandwich + " Bread Will be Toasted!");
+
+                            } else {
+
+                                signatureSandwich.setToasted(false);
+                                System.out.println("Your " + signatureSandwich + " Bread Will stay Un-Toasted...");
+                            }
                             break;
-                        case "4":
-                            String userExtraMeatOption = "";
-                            userExtraMeatOption = scanner.nextLine();
 
+                        case "4":
 
                             System.out.println("Do you want to Add Extra Meat to This Sandwich?  ( Y / N )");
+
+                            String userExtraMeatOption;
+                            userExtraMeatOption = scanner.nextLine();
+
                             if (userExtraMeatOption.equalsIgnoreCase("yes") || userExtraMeatOption.equalsIgnoreCase("y")) {
-
+                                signatureSandwich.setExtraMeat(true);
+                                System.out.println("Extra Meat Will be Added!");
+                            } else {
+                                signatureSandwich.setExtraMeat(false);
+                                System.out.println("No Extra Meat Will be Added...");
                             }
-                            signatureSandwich.setExtraMeat(false);
 
                             break;
+
                         case "5":
-                            System.out.println("Do you Want to Add Extra Cheese to This Sandwich?");
+
+
+                            System.out.println("Do you want to Add Extra Cheese to This Sandwich?  ( Y / N )");
+
+                            String userExtraCheeseOption;
+                            userExtraCheeseOption = scanner.nextLine();
+
+                            if (userExtraCheeseOption.equalsIgnoreCase("yes") || userExtraCheeseOption.equalsIgnoreCase("y")) {
+                                signatureSandwich.setExtraCheese(true);
+                                System.out.println("Extra Cheese Added!");
+                            } else {
+                                signatureSandwich.setExtraCheese(false);
+                                System.out.println("No Extra Cheese Will be Added...");
+                            }
 
                             break;
+
                         case "6":
+
+                            String userSizeOption;
+
+                            userSizeOption = scanner.nextLine();
                             System.out.println("What Size Sandwich of this " + signatureSandwich + " do you Want?" );
+                            System.out.println("1 - 4 Inch");
+                            System.out.println("2 - 8 Inch");
+                            System.out.println("3 - 12 Inch");
+
+                            switch (userSizeOption) {
+
+                                case "1":
+                                    signatureSandwich.setSize(4);
+                                    break;
+                                case "2":
+                                    signatureSandwich.setSize(8);
+                                    break;
+                                case  "3":
+                                    signatureSandwich.setSize(12);
+                                default:
+                                    System.out.println("Please Enter Either '1', '2' or '3' for the Bread Size");
+                            }
+
                             break;
+
                         case "7":
+
                             System.out.println("What Type of Bread do you Want?");
+
+                            String userBreadTypeOption;
+                            userBreadTypeOption = scanner.nextLine();
+
+                            System.out.println("1 - White");
+                            System.out.println("2 - Wheat");
+                            System.out.println("3 - Rye");
+                            System.out.println("4 - Wrap");
+
+//NESTED SWITCH STATEMENT TO HANDLE CHANGING BREAD TYPE
+                            switch (userBreadTypeOption) {
+
+                                case "1":
+                                    signatureSandwich.setBreadType("White");
+                                break;
+                                case "2":
+                                    signatureSandwich.setBreadType("Wheat");
+                                break;
+                                case "3":
+                                    signatureSandwich.setBreadType("Rye");
+                                    break;
+                                case "4":
+                                    signatureSandwich.setBreadType("Wrap");
+                                default:
+                                    System.out.println("Please Enter a Number between 1-4 for the Bread Type!");
+                            }
+
                             break;
+
                         default:
                             System.out.println("Please Enter a Number Between 1-7!");
 

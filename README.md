@@ -54,6 +54,10 @@ Follow these steps to get your Financial Tracker Application running within Inte
 
 - Menu for the Customer to Input their Name to have a Personalized Receipt to be Added in the Future!
 
+## Interesting Code
+
+- Nested switch statements are used for some of the signature sandwich customization handling method.
+
 ## Resources
 
 - [W3 Schools for Documentation ](https://www.w3schools.com/java/ref_string_format.asp)

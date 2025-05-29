@@ -111,9 +111,6 @@ public class Sandwich {
         sb.append("Extra Cheese: ").append(isExtraCheese ? "Yes" : "No").append("\n");
         sb.append("Extra Meat: ").append(isExtraMeat ? "Yes" : "No").append("\n");
 
-
-
-
         return sb.toString();
     }
 }

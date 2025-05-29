@@ -22,14 +22,26 @@ public class OrderFileManager {
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(newFileName))) {
 
+            bw.write("Thank you for Choosing Deli-cious Deli!\n");
+            bw.write("Here is Your Order Summary:\n");
+            bw.write(" ");
+            bw.newLine();
 
+            bw.write("=== Sandwiches ===\n");
+            bw.newLine();
+            bw.write(" ");
+
+            int sandwichCount = 1;
             for (Sandwich sandwich : order.getSandwiches()) {
-                bw.write("Sandwich 1");
+                bw.write("Sandwich " + sandwichCount + "\n");
+                bw.write(" ");
                 bw.write(sandwich.toString());
                 bw.newLine();
+                sandwichCount++;
 
             }
 
+            bw.write("=== Drinks ===\n");
             bw.newLine();
 
             for (Drink drink : order.getDrinks()) {
@@ -37,6 +49,8 @@ public class OrderFileManager {
                 bw.newLine();
             }
 
+            bw.newLine();
+            bw.write("=== Chips ===\n");
             bw.newLine();
 
             for (Chips chips : order.getChips()) {
@@ -56,7 +70,6 @@ public class OrderFileManager {
         order.getSandwiches().clear();
         order.getDrinks().clear();
         order.getChips().clear();
-
 
     }
 

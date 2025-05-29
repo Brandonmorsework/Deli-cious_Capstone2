@@ -1,4 +1,4 @@
-# Financial Tracker - Brandon Morse
+# The Deli-cious Deli - Brandon Morse
 
 ## The Deli-cious Deli is an Application that Allows a customer to buy sandwiches, chips and drinks and checkout their order and receive a receipt just as they would in an in-person Deli.
 

@@ -565,11 +565,11 @@ public class UserInterface {
 
         userOption = scanner.nextLine();
 
-        String customizeOption;
-
         if (userOption.equalsIgnoreCase("yes") || userOption.equalsIgnoreCase("y")) {
 
-            while (!userOption.equalsIgnoreCase("next")) {
+            String customizeOption = "";
+
+            while (!customizeOption.equalsIgnoreCase("next")) {
 
                 System.out.println("Signature Sandwich Customization");
                 System.out.println("Please Choose What you Want to Customize. Type 'next' When Finished Customizing:");
@@ -655,22 +655,26 @@ public class UserInterface {
 
                             String userSizeOption;
 
-                            userSizeOption = scanner.nextLine();
                             System.out.println("What Size Sandwich of this " + signatureSandwich + " do you Want?" );
                             System.out.println("1 - 4 Inch");
                             System.out.println("2 - 8 Inch");
                             System.out.println("3 - 12 Inch");
 
+                            userSizeOption = scanner.nextLine();
+
                             switch (userSizeOption) {
 
                                 case "1":
                                     signatureSandwich.setSize(4);
+                                    System.out.println("Changed Bread Size to 4 Inch!");
                                     break;
                                 case "2":
                                     signatureSandwich.setSize(8);
+                                    System.out.println("Changed Bread Size to ");
                                     break;
                                 case  "3":
                                     signatureSandwich.setSize(12);
+                                    break;
                                 default:
                                     System.out.println("Please Enter Either '1', '2' or '3' for the Bread Size");
                             }
@@ -682,27 +686,33 @@ public class UserInterface {
                             System.out.println("What Type of Bread do you Want?");
 
                             String userBreadTypeOption;
-                            userBreadTypeOption = scanner.nextLine();
 
                             System.out.println("1 - White");
                             System.out.println("2 - Wheat");
                             System.out.println("3 - Rye");
                             System.out.println("4 - Wrap");
 
+                            userBreadTypeOption = scanner.nextLine();
+
 //NESTED SWITCH STATEMENT TO HANDLE CHANGING BREAD TYPE
                             switch (userBreadTypeOption) {
 
                                 case "1":
                                     signatureSandwich.setBreadType("White");
-                                break;
+                                    System.out.println("Changed to White Bread!");
+                                    break;
                                 case "2":
                                     signatureSandwich.setBreadType("Wheat");
-                                break;
+                                    System.out.println("Changed to Wheat Bread!");
+                                    break;
                                 case "3":
                                     signatureSandwich.setBreadType("Rye");
+                                    System.out.println("Changed to Rye Bread");
                                     break;
                                 case "4":
                                     signatureSandwich.setBreadType("Wrap");
+                                    System.out.println("Sandwich Changed to Wrap!");
+                                    break;
                                 default:
                                     System.out.println("Please Enter a Number between 1-4 for the Bread Type!");
                             }

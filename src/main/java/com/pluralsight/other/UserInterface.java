@@ -55,9 +55,10 @@ public class UserInterface {
             System.out.println("==== New Order ====");
             System.out.println(" ");
             System.out.println("1 - Add Sandwich");
-            System.out.println("2 - Add Drink");
-            System.out.println("3 - Add Chips");
-            System.out.println("4 - Checkout");
+            System.out.println("2 - Add Signature Sandwich");
+            System.out.println("3 - Add Drink");
+            System.out.println("4 - Add Chips");
+            System.out.println("5 - Checkout");
             System.out.println("0 - Cancel Order");
             System.out.println(" ");
             System.out.println("Enter your Choice:");
@@ -70,12 +71,16 @@ public class UserInterface {
                     addSandwich();
                     break;
                 case 2:
-                    addDrink();
+                    addSignatureSandwich();
                     break;
                 case 3:
+                    addDrink();
+                    break;
+
+                case 4:
                     addChips();
                     break;
-                case 4:
+                case 5:
                     checkOut();
                     break;
                 case 0:
@@ -509,6 +514,17 @@ public class UserInterface {
         Sandwich sandwich = new Sandwich(userSandwichSize, userBreadType, userBreadToasted, isExtraCheese, isExtraMeat, toppingList);
         order.addSandwich(sandwich);
         System.out.println("Sandwich Successfully Added!");
+
+    }
+
+
+    public void addSignatureSandwich() {
+
+        System.out.println("====== Signature Sandwiches ======= ");
+        System.out.println("1 - Brandon's BLT Sandwich");
+        System.out.println("2 - Carmen's Club Sandwich");
+        System.out.println("3 - Vegetarian's Paradise Sandwich");
+
 
     }
 

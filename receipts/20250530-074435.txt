@@ -13,16 +13,25 @@ Here is Your Order Summary:
  -     Peppers
  -     Ketchup
  -     Lettuce
+Extra Cheese: No
+Extra Meat: Yes
+
+Sandwich 2
+ 8 Inch Wheat Bread
+ -     Provolone
  -     Lettuce
- -     Lettuce
+ -     Tomatoes
+ -     Onions
+ -     Guacamole
 Extra Cheese: No
 Extra Meat: No
 
 === Drinks ===
 
+Small Coca-Cola
 
 === Chips ===
 
-Fritos
+Nacho Cheese Doritos
 
-Total: $16.00
+Total: $27.50

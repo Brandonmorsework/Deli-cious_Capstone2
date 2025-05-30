@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-    private Scanner scanner;
+    private final Scanner scanner;
     private Order order;
 
     public UserInterface() {
@@ -718,7 +718,8 @@ public class UserInterface {
 
                             String userSizeOption;
 
-                            System.out.println("What Size Sandwich of this " + signatureSandwich + " do you Want?" );
+                            System.out.println(signatureSandwich);
+                            System.out.println("What Size of this Sandwich do you Want?" );
                             System.out.println("1 - 4 Inch");
                             System.out.println("2 - 8 Inch");
                             System.out.println("3 - 12 Inch");
@@ -782,9 +783,6 @@ public class UserInterface {
                             }
 
                             break;
-
-                        default:
-                            System.out.println("Please Enter a Number Between 1-6!");
 
                     }
 

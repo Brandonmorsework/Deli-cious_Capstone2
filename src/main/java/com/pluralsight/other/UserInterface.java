@@ -89,8 +89,10 @@ public class UserInterface {
                         System.out.println();
                         clearOrder();
                         quit = true;
+                        break;
                     default:
                         System.out.println("Please Enter a Number Between 0-5!");
+                        break;
 
                 }
 

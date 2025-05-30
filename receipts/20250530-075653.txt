@@ -1,0 +1,27 @@
+Thank you for Choosing Deli-cious Deli!
+Here is Your Order Summary:
+ 
+=== Sandwiches ===
+
+ Sandwich 1
+ Toasted 4 Inch Wheat Bread
+ -     Bacon
+ -     Ham
+ -     Salami
+ -     American
+ -     Mayo
+ -     Peppers
+ -     Ketchup
+ -     Onions
+ -     Onions
+ -     Onions
+Extra Cheese: No
+Extra Meat: No
+
+=== Drinks ===
+
+
+=== Chips ===
+
+
+Total: $9.25
